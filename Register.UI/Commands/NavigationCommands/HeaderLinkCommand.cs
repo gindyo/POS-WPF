@@ -12,5 +12,7 @@ namespace Register.Commands.NavigationCommands
             WorkspaceOwner = workspaceOwner;
             DoCanExecuteCheck = () => true;
         }
+
+        public string DisplayName { get; set; }
     }
 }

@@ -7,6 +7,7 @@ namespace Register.Commands.NavigationCommands.ComandViewModels
     {
         public NavigateToSearchProductVM(IWorkspaceOwner wsOwner) : base(wsOwner)
         {
+            DisplayName = "Product Search";
             DoCanExecuteCheck = () => true;
             DoExecute = Navigate;
         }
@@ -14,7 +15,7 @@ namespace Register.Commands.NavigationCommands.ComandViewModels
         private void Navigate()
         {
             var productSearchVM = new ProductSearchVM();
-            WorkspaceOwner.CurrentView = productSearchVM;
+            WorkspaceOwner.CurrentWorkspace = productSearchVM;
         }
     }
 }

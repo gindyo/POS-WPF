@@ -13,7 +13,7 @@ namespace Register.Commands.NavigationCommands.ComandViewModels
 
         protected void MoveNext()
         {
-            WorkspaceOwner.CurrentView = NextWorkspace();
+            WorkspaceOwner.CurrentWorkspace = NextWorkspace();
         }
 
         public virtual IWorkspace NextWorkspace()

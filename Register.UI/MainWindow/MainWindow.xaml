@@ -16,6 +16,6 @@
     </Window.Resources>
     <StackPanel>
         <userControls:WorkspaceHeader DataContext="{Binding WorkspaceHeader}" />
-        <ContentPresenter Content="{Binding CurrentView}" />
+        <ContentPresenter Content="{Binding CurrentWorkspace}" />
     </StackPanel>
 </Window>

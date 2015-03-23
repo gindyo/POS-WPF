@@ -52,7 +52,10 @@
     <Compile Include="BaseUI\BaseVM.cs" />
     <Compile Include="BaseUI\Implementations\UICommand.cs" />
     <Compile Include="BaseUI\Implementations\Workspaces.cs" />
-    <Compile Include="BaseUI\Interfaces\Interfaces.cs" />
+    <Compile Include="BaseUI\Interfaces\IWorkspace.cs" />
+    <Compile Include="BaseUI\Interfaces\IUICommand.cs" />
+    <Compile Include="BaseUI\Interfaces\IWorkspaceOwner.cs" />
+    <Compile Include="BaseUI\Interfaces\IWorkspaces.cs" />
     <Compile Include="Commands\NavigationCommands\HeaderLinkCommand.cs" />
     <Compile Include="Commands\NavigationCommands\ComandViewModels\CVM_NavigateBack.cs" />
     <Compile Include="Commands\NavigationCommands\ComandViewModels\CVM_HistoryNavigation.cs" />

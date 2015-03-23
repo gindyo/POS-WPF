@@ -38,20 +38,17 @@ namespace Register.UserControls
 
         private ICommand SetCommand(UICommand command)
         {
-            command.Executed += RaiseChange;
+            command.Executed += Update;
             return command;
         }
 
-        private void RaiseChange()
+        public void Update()
         {
             OnPropertyChanged("CloseWorkspaceCommand");
             OnPropertyChanged("NavigateForwardCommand");
             OnPropertyChanged("NavigateBackCommand");
         }
 
-        public void Update()
-        {
-            RaiseChange();
-        }
+
     }
 }

@@ -10,9 +10,7 @@ namespace Register.MainWindow
 {
     public class MainWindowVM : BaseVM, IWorkspaceOwner
     {
-        private IWorkspace _currentView;
         private IWorkspaces _workspaces;
-
         public MainWindowVM()
         {
             _workspaces = new Workspaces();
@@ -23,44 +21,34 @@ namespace Register.MainWindow
             };
             WorkspaceHeader = new WorkspaceHeaderVM(this);
         }
-
         public WorkspaceHeaderVM WorkspaceHeader { get; set; }
-
         public string Title
         {
-            get { return (CurrentView == null ? "" : CurrentView.DisplayName); }
+            get { return (CurrentWorkspace == null ? "" : CurrentWorkspace.DisplayName); }
         }
-
         public List<IUICommand> NavigationLinks { get; set; }
-
         public IWorkspaces Workspaces
         {
-            get
-            {
-                if (_workspaces == null)
-                    _workspaces = new Workspaces();
-                return _workspaces;
-            }
+            get { return _workspaces ?? (_workspaces = new Workspaces()); }
         }
-
-        public IWorkspace CurrentView
+        public IWorkspace CurrentWorkspace
         {
-            get { return _currentView; }
+            get { return Workspaces.CurrentWorkspace; }
             set
             {
                 if (value != null && !Workspaces.Contains(value))
-                    Workspaces.Add(value);
-                _currentView = value;
+                    Workspaces.AddWorkspace(value);
                 OnPropertyChanged();
                 WorkspaceHeader.Update();
             }
         }
-
-
-        public void OnWorkspaceRequestClose()
+        public bool HasWorkspaces()
         {
-            Workspaces.Remove(CurrentView);
-            CurrentView = Workspaces.FirstOrDefault();
+           return Workspaces.Any();
+        }
+        public void RemoveCurrentWorkspace()
+        {
+            Workspaces.RemoveCurrent();
         }
     }
 }

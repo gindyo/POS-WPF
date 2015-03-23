@@ -18,13 +18,12 @@ namespace Register.Commands
 
         public bool CanExecute(object parameter)
         {
-            return WorkspaceOwner.Workspaces.Any();
+            return WorkspaceOwner.HasWorkspaces();
         }
 
         public void Execute(object parameter)
         {
-            WorkspaceOwner.OnWorkspaceRequestClose();
-            AfterExecute();
+            WorkspaceOwner.RemoveCurrentWorkspace();
         }
 
         public event EventHandler CanExecuteChanged;
