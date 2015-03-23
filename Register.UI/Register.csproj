@@ -56,6 +56,7 @@
     <Compile Include="BaseUI\Interfaces\IUICommand.cs" />
     <Compile Include="BaseUI\Interfaces\IWorkspaceOwner.cs" />
     <Compile Include="BaseUI\Interfaces\IWorkspaces.cs" />
+    <Compile Include="BaseUI\Implementations\Product.cs" />
     <Compile Include="Commands\NavigationCommands\HeaderLinkCommand.cs" />
     <Compile Include="Commands\NavigationCommands\CommandViewModels\CVM_NavigateBack.cs" />
     <Compile Include="Commands\NavigationCommands\CommandViewModels\CVM_HistoryNavigation.cs" />
@@ -70,7 +71,13 @@
       <DependentUpon>CloseCommandView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Commands\CloseCommandVM.cs" />
+    <Compile Include="BaseUI\Interfaces\IProduct.cs" />
+    <Compile Include="BaseUI\Implementations\ProductsList.cs" />
+    <Compile Include="MainWindow\HomeScreenVM.cs" />
     <Compile Include="UserControls\HorizontalItemsControl.cs" />
+    <Compile Include="UserControls\ProductListView.xaml.cs">
+      <DependentUpon>ProductListView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\WorkspaceHeader.xaml.cs">
       <DependentUpon>WorkspaceHeader.xaml</DependentUpon>
     </Compile>
@@ -96,6 +103,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ProductSearch\ProductSearchView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ProductListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

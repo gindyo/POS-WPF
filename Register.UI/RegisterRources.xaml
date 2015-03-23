@@ -6,7 +6,9 @@
 
                     xmlns:implementations="clr-namespace:Register.BaseUI.Implementations"
                     xmlns:commandViews="clr-namespace:Register.Commands.NavigationCommands.CommandViews"
-                    xmlns:navigationCommands="clr-namespace:Register.Commands.NavigationCommands.CommandViewModels">
+                    xmlns:navigationCommands="clr-namespace:Register.Commands.NavigationCommands.CommandViewModels"
+                    xmlns:userControls="clr-namespace:Register.UserControls"
+                    xmlns:mainWindow="clr-namespace:Register.MainWindow">
     <BooleanToVisibilityConverter x:Key="BoolToVis" />
     <DataTemplate DataType="{x:Type ps:ProductSearchVM}">
         <ps:ProductSearchView />
@@ -17,6 +19,14 @@
     </DataTemplate>
     <DataTemplate DataType="{x:Type implementations:UICommand}">
         <commandViews:NavigationCommandView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type mainWindow:HomeScreenVM}">
+        <TextBlock Text="{Binding DisplayName}"></TextBlock>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type implementations:ProductsList}">
+        <userControls:ProductListView />
     </DataTemplate>
 
     <DataTemplate DataType="{x:Type navigationCommands:NavigateBackCommandVM}">

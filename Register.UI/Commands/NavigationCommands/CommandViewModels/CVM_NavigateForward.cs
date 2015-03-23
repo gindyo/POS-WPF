@@ -10,10 +10,7 @@ namespace Register.Commands.NavigationCommands.CommandViewModels
 
         public override IWorkspace NextWorkspace()
         {
-            int currentWorkspaceIndex = WorkspaceOwner.Workspaces.IndexOf(WorkspaceOwner.CurrentWorkspace);
-            if (WorkspaceOwner.Workspaces.Count == currentWorkspaceIndex + 1)
-                return null;
-            return WorkspaceOwner.Workspaces[currentWorkspaceIndex + 1];
+            return WorkspaceOwner.Workspaces.Next();
         }
     }
 }

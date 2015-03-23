@@ -1,24 +1,82 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.WebSockets;
+using System.Windows.Automation.Peers;
 using Register.BaseUI.Interfaces;
+using Register.MainWindow;
 
 namespace Register.BaseUI.Implementations
 {
     public class Workspaces : List<IWorkspace>, IWorkspaces
     {
-        public  void AddWorkspace(IWorkspace item)
+        private IWorkspace _currentWorkspace;
+
+        public Workspaces()
         {
-            CurrentWorkspace = item;
-            Add(CurrentWorkspace);
+            AddWorkspace(new HomeScreenVM());
+        }
+        public void AddWorkspace(IWorkspace item)
+        {
+            IWorkspace existingWorkspace = this.FirstOrDefault(ws => ws.GetType() == item.GetType());
+            if (existingWorkspace == null)
+            {
+                Add(item);
+                CurrentWorkspace = item;
+            }
+            else
+            {
+                CurrentWorkspace = existingWorkspace;
+            }
         }
 
+        new void Add(IWorkspace item)
+        {
+            base.Add(item);
+        }
         public void SetCurrentWorkspace(IWorkspace workspace)
         {
             CurrentWorkspace = workspace;
         }
-        public IWorkspace CurrentWorkspace { get; set; }
+
+        public IWorkspace CurrentWorkspace
+        {
+            get { return _currentWorkspace; }
+            set
+            {
+                _currentWorkspace = value;
+                if (OnCurrentItemChanged != null) OnCurrentItemChanged();
+            }
+        }
+
         public void RemoveCurrent()
         {
+            IWorkspace previous = Previous();
+            if (CurrentWorkspace is HomeScreenVM)
+                return;
             Remove(CurrentWorkspace);
+            CurrentWorkspace = previous;
         }
+        public IWorkspace Previous()
+        {
+            int currentWorkspaceIndex = IndexOf(CurrentWorkspace);
+            if (currentWorkspaceIndex <= 0)
+            {
+                CurrentWorkspace = new HomeScreenVM();
+                return CurrentWorkspace;
+            }
+            return this[currentWorkspaceIndex - 1];
+        }
+
+        public IWorkspace Next()
+        {
+            int currentWorkspaceIndex = IndexOf(CurrentWorkspace);
+            if (Count == currentWorkspaceIndex + 1)
+                return null;
+            return this[currentWorkspaceIndex + 1];
+        }
+
+        public event Action OnCurrentItemChanged;
+
     }
 }

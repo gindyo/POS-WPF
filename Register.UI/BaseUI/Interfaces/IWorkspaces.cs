@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Register.BaseUI.Interfaces
 {
@@ -7,5 +8,8 @@ namespace Register.BaseUI.Interfaces
         void AddWorkspace(IWorkspace value);
         IWorkspace CurrentWorkspace { get; set; }
         void RemoveCurrent();
+        IWorkspace Next();
+        IWorkspace Previous();
+        event Action OnCurrentItemChanged;
     }
 }

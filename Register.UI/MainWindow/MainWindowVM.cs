@@ -10,10 +10,11 @@ namespace Register.MainWindow
 {
     public class MainWindowVM : BaseVM, IWorkspaceOwner
     {
-        private IWorkspaces _workspaces;
+        private readonly IWorkspaces _workspaces;
         public MainWindowVM()
         {
             _workspaces = new Workspaces();
+            _workspaces.OnCurrentItemChanged += () => OnPropertyChanged("CurrentWorkspace");
             NavigationLinks = new List<IUICommand>
             {
                 new NavigateToSearchProductVM(this),
@@ -29,18 +30,15 @@ namespace Register.MainWindow
         public List<IUICommand> NavigationLinks { get; set; }
         public IWorkspaces Workspaces
         {
-            get { return _workspaces ?? (_workspaces = new Workspaces()); }
+            get
+            {
+                return _workspaces;
+            }
         }
         public IWorkspace CurrentWorkspace
         {
             get { return Workspaces.CurrentWorkspace; }
-            set
-            {
-                if (value != null && !Workspaces.Contains(value))
-                    Workspaces.AddWorkspace(value);
-                OnPropertyChanged();
-                WorkspaceHeader.Update();
-            }
+           
         }
         public bool HasWorkspaces()
         {
@@ -49,6 +47,7 @@ namespace Register.MainWindow
         public void RemoveCurrentWorkspace()
         {
             Workspaces.RemoveCurrent();
+            OnPropertyChanged("CurrentWorkspace");
         }
     }
 }

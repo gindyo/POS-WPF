@@ -14,8 +14,7 @@ namespace Register.Commands.NavigationCommands.CommandViewModels
 
         private void Navigate()
         {
-            var productSearchVM = new ProductSearchVM();
-            WorkspaceOwner.CurrentWorkspace = productSearchVM;
+            WorkspaceOwner.Workspaces.AddWorkspace(new ProductSearchVM());
         }
     }
 }
