@@ -18,7 +18,7 @@ namespace Register.UI.MainWindow
             _workspaces.OnCurrentItemChanged += () => OnPropertyChanged("CurrentWorkspace");
             NavigationLinks = new List<IUICommand>
             {
-                new NavigateToSearchProductVM(this),
+                new NavigateToHomeCommandVM(this),
                 new NavigateToSearchProductVM(this)
             };
             WorkspaceHeader = new WorkspaceHeaderVM(this);
