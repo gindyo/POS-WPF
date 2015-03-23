@@ -1,7 +1,7 @@
-﻿using Register.BaseUI.Implementations;
-using Register.BaseUI.Interfaces;
+﻿using Register.UI.BaseUI.Implementations;
+using Register.UI.BaseUI.Interfaces;
 
-namespace Register.Commands.NavigationCommands
+namespace Register.UI.Commands.NavigationCommands
 {
     public class HeaderLinkCommand : UICommand
     {

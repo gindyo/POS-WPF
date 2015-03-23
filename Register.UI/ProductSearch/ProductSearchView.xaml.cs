@@ -1,4 +1,4 @@
-﻿namespace Register.ProductSearch
+﻿namespace Register.UI.ProductSearch
 {
     /// <summary>
     ///     Interaction logic for ProductSearchView.xaml

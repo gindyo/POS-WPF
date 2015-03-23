@@ -1,4 +1,4 @@
-﻿namespace Register.UserControls
+﻿namespace Register.UI.UserControls
 {
     /// <summary>
     ///     Interaction logic for ProductListView.xaml

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Register.BaseUI.Implementations;
-using Register.BaseUI.Interfaces;
+using Register.UI.BaseUI.Implementations;
+using Register.UI.BaseUI.Interfaces;
 
-namespace Register.ProductSearch
+namespace Register.UI.ProductSearch
 {
     public class ProductSearchVM : IWorkspace
     {

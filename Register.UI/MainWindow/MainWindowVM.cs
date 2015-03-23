@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Register.BaseUI;
-using Register.BaseUI.Implementations;
-using Register.BaseUI.Interfaces;
-using Register.Commands.NavigationCommands.CommandViewModels;
-using Register.UserControls;
+using Register.UI.BaseUI;
+using Register.UI.BaseUI.Implementations;
+using Register.UI.BaseUI.Interfaces;
+using Register.UI.Commands.NavigationCommands.CommandViewModels;
+using Register.UI.UserControls;
 
-namespace Register.MainWindow
+namespace Register.UI.MainWindow
 {
     public class MainWindowVM : BaseVM, IWorkspaceOwner
     {

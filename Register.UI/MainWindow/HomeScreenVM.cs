@@ -1,6 +1,6 @@
-﻿using Register.BaseUI.Interfaces;
+﻿using Register.UI.BaseUI.Interfaces;
 
-namespace Register.MainWindow
+namespace Register.UI.MainWindow
 {
     public class HomeScreenVM : IWorkspace
     {

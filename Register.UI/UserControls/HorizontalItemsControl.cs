@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace Register.UserControls
+namespace Register.UI.UserControls
 {
     public class HorizontalItemsControl : ItemsControl
     {

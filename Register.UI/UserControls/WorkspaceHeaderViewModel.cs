@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Input;
-using Register.BaseUI;
-using Register.BaseUI.Implementations;
-using Register.BaseUI.Interfaces;
-using Register.Commands;
-using Register.Commands.NavigationCommands.CommandViewModels;
+using Register.UI.BaseUI;
+using Register.UI.BaseUI.Implementations;
+using Register.UI.BaseUI.Interfaces;
+using Register.UI.Commands;
+using Register.UI.Commands.NavigationCommands.CommandViewModels;
 
-namespace Register.UserControls
+namespace Register.UI.UserControls
 {
     public class WorkspaceHeaderVM : BaseVM
     {

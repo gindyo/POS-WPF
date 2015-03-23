@@ -1,7 +1,7 @@
-﻿using Register.BaseUI.Interfaces;
-using Register.ProductSearch;
+﻿using Register.UI.BaseUI.Interfaces;
+using Register.UI.ProductSearch;
 
-namespace Register.Commands.NavigationCommands.CommandViewModels
+namespace Register.UI.Commands.NavigationCommands.CommandViewModels
 {
     internal class NavigateToSearchProductVM : HeaderLinkCommand
     {

@@ -1,4 +1,4 @@
-﻿namespace Register.UserControls
+﻿namespace Register.UI.UserControls
 {
     public partial class WorkspaceHeader
     {

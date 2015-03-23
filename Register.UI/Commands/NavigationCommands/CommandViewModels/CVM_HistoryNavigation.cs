@@ -1,7 +1,7 @@
 ﻿using System.Linq;
-using Register.BaseUI.Interfaces;
+using Register.UI.BaseUI.Interfaces;
 
-namespace Register.Commands.NavigationCommands.CommandViewModels
+namespace Register.UI.Commands.NavigationCommands.CommandViewModels
 {
     public class HistoryCommandVM : HeaderCommand
     {

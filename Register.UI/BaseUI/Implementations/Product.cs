@@ -1,6 +1,6 @@
-﻿using Register.BaseUI.Interfaces;
+﻿using Register.UI.BaseUI.Interfaces;
 
-namespace Register.BaseUI.Implementations
+namespace Register.UI.BaseUI.Implementations
 {
     internal class Product : IProduct
     {

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Register.BaseUI.Interfaces;
-using Register.MainWindow;
+using Register.UI.BaseUI.Interfaces;
+using Register.UI.MainWindow;
 
-namespace Register.BaseUI.Implementations
+namespace Register.UI.BaseUI.Implementations
 {
     public class Workspaces : List<IWorkspace>, IWorkspaces
     {

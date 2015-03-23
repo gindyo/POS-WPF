@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace Register.BaseUI
+namespace Register.UI.BaseUI
 {
     public class BaseVM : INotifyPropertyChanged
     {

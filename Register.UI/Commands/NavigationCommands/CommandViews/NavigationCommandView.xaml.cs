@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace Register.Commands.NavigationCommands.CommandViews
+namespace Register.UI.Commands.NavigationCommands.CommandViews
 {
     /// <summary>
     ///     Interaction logic for NavigationCommandView.xaml

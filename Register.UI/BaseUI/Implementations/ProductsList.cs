@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Register.BaseUI.Interfaces;
+using Register.UI.BaseUI.Interfaces;
 
-namespace Register.BaseUI.Implementations
+namespace Register.UI.BaseUI.Implementations
 {
     public class ProductsList : List<IProduct>
     {

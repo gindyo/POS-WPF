@@ -1,4 +1,4 @@
-﻿namespace Register.BaseUI.Interfaces
+﻿namespace Register.UI.BaseUI.Interfaces
 {
     public interface IWorkspace
     {

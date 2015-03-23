@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Register.BaseUI.Interfaces
+namespace Register.UI.BaseUI.Interfaces
 {
     public interface IWorkspaceOwner
     {
