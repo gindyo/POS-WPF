@@ -33,11 +33,13 @@
             <Image Source="../Images/arrow_Back_16xLG.png" />
         </commandViews:NavigationCommandView>
     </DataTemplate>
+
     <DataTemplate DataType="{x:Type ncVMs:NavigateForwardCommandVM}">
         <commandViews:NavigationCommandView>
             <Image Source="../Images/arrow_Forward_16xLG.png" />
         </commandViews:NavigationCommandView>
     </DataTemplate>
+    
     <DataTemplate DataType="{x:Type nc:HeaderLinkCommand}">
         <commandViews:NavigationCommandView>
             <Button Margin="2,0,2,0" Padding="10,0,10,0" Command="{Binding}">
@@ -45,4 +47,5 @@
             </Button>
         </commandViews:NavigationCommandView>
     </DataTemplate>
+
 </ResourceDictionary>
