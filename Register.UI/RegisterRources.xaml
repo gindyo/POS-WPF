@@ -3,37 +3,37 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:ps="clr-namespace:Register.ProductSearch"
                     xmlns:commands="clr-namespace:Register.Commands"
-                    xmlns:views="clr-namespace:Register.Commands.NavigationCommands.Views"
 
-                    xmlns:navigationCommands="clr-namespace:Register.Commands.NavigationCommands.ComandViewModels"
-                    xmlns:implementations="clr-namespace:Register.BaseUI.Implementations">
+                    xmlns:implementations="clr-namespace:Register.BaseUI.Implementations"
+                    xmlns:commandViews="clr-namespace:Register.Commands.NavigationCommands.CommandViews"
+                    xmlns:navigationCommands="clr-namespace:Register.Commands.NavigationCommands.CommandViewModels">
     <BooleanToVisibilityConverter x:Key="BoolToVis" />
     <DataTemplate DataType="{x:Type ps:ProductSearchVM}">
         <ps:ProductSearchView />
     </DataTemplate>
 
     <DataTemplate DataType="{x:Type commands:CloseCommandVM}">
-        <views:CloseCommandView />
+        <commandViews:CloseCommandView />
     </DataTemplate>
     <DataTemplate DataType="{x:Type implementations:UICommand}">
-        <views:NavigationCommandView />
+        <commandViews:NavigationCommandView />
     </DataTemplate>
 
     <DataTemplate DataType="{x:Type navigationCommands:NavigateBackCommandVM}">
-        <views:NavigationCommandView>
+        <commandViews:NavigationCommandView>
             <Image Source="../Images/arrow_Back_16xLG.png" />
-        </views:NavigationCommandView>
+        </commandViews:NavigationCommandView>
     </DataTemplate>
     <DataTemplate DataType="{x:Type navigationCommands:NavigateForwardCommandVM}">
-        <views:NavigationCommandView>
+        <commandViews:NavigationCommandView>
             <Image Source="../Images/arrow_Forward_16xLG.png" />
-        </views:NavigationCommandView>
+        </commandViews:NavigationCommandView>
     </DataTemplate>
     <DataTemplate DataType="{x:Type navigationCommands:NavigateToSearchProductVM}">
-        <views:NavigationCommandView>
+        <commandViews:NavigationCommandView>
             <Button Margin="2,0,2,0" Padding="10,0,10,0" Command="{Binding}">
                 <TextBlock Text="{Binding DisplayName}" />
             </Button>
-        </views:NavigationCommandView>
+        </commandViews:NavigationCommandView>
     </DataTemplate>
 </ResourceDictionary>

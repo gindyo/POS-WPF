@@ -4,7 +4,7 @@ using Register.BaseUI;
 using Register.BaseUI.Implementations;
 using Register.BaseUI.Interfaces;
 using Register.Commands;
-using Register.Commands.NavigationCommands.ComandViewModels;
+using Register.Commands.NavigationCommands.CommandViewModels;
 
 namespace Register.UserControls
 {

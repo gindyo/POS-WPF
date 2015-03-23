@@ -1,6 +1,6 @@
 ﻿using Register.BaseUI.Interfaces;
 
-namespace Register.Commands.NavigationCommands.ComandViewModels
+namespace Register.Commands.NavigationCommands.CommandViewModels
 {
     public class NavigateBackCommandVM : HistoryCommandVM
     {

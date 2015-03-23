@@ -57,16 +57,16 @@
     <Compile Include="BaseUI\Interfaces\IWorkspaceOwner.cs" />
     <Compile Include="BaseUI\Interfaces\IWorkspaces.cs" />
     <Compile Include="Commands\NavigationCommands\HeaderLinkCommand.cs" />
-    <Compile Include="Commands\NavigationCommands\ComandViewModels\CVM_NavigateBack.cs" />
-    <Compile Include="Commands\NavigationCommands\ComandViewModels\CVM_HistoryNavigation.cs" />
-    <Compile Include="Commands\NavigationCommands\ComandViewModels\CVM_NavigateForward.cs" />
-    <Compile Include="Commands\NavigationCommands\ComandViewModels\CVM_NavigateTo_Home.cs" />
-    <Compile Include="Commands\NavigationCommands\ComandViewModels\CVM_NavigateTo_SearchProduct.cs" />
+    <Compile Include="Commands\NavigationCommands\CommandViewModels\CVM_NavigateBack.cs" />
+    <Compile Include="Commands\NavigationCommands\CommandViewModels\CVM_HistoryNavigation.cs" />
+    <Compile Include="Commands\NavigationCommands\CommandViewModels\CVM_NavigateForward.cs" />
+    <Compile Include="Commands\NavigationCommands\CommandViewModels\CVM_NavigateTo_Home.cs" />
+    <Compile Include="Commands\NavigationCommands\CommandViewModels\CVM_NavigateTo_SearchProduct.cs" />
     <Compile Include="Commands\NavigationCommands\HeaderCommand.cs" />
-    <Compile Include="Commands\NavigationCommands\Views\NavigationCommandView.xaml.cs">
+    <Compile Include="Commands\NavigationCommands\CommandViews\NavigationCommandView.xaml.cs">
       <DependentUpon>NavigationCommandView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Commands\NavigationCommands\Views\CloseCommandView.xaml.cs">
+    <Compile Include="Commands\NavigationCommands\CommandViews\CloseCommandView.xaml.cs">
       <DependentUpon>CloseCommandView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Commands\CloseCommandVM.cs" />
@@ -75,11 +75,11 @@
       <DependentUpon>WorkspaceHeader.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\WorkspaceHeaderViewModel.cs" />
-    <Page Include="Commands\NavigationCommands\Views\NavigationCommandView.xaml">
+    <Page Include="Commands\NavigationCommands\CommandViews\NavigationCommandView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Commands\NavigationCommands\Views\CloseCommandView.xaml">
+    <Page Include="Commands\NavigationCommands\CommandViews\CloseCommandView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -8,31 +8,19 @@ namespace Register.Commands
 {
     public class CloseCommandVM : UICommand
     {
-        public CloseCommandVM(IWorkspaceOwner workspaceOwner, string displayName = "X")
+        public CloseCommandVM(IWorkspaceOwner workspaceOwner)
         {
+            DisplayName = "X";
             WorkspaceOwner = workspaceOwner;
+            DoExecute = () =>  WorkspaceOwner.RemoveCurrentWorkspace();
+            DoCanExecuteCheck = () => WorkspaceOwner.HasWorkspaces();
         }
 
         public IWorkspaceOwner WorkspaceOwner { get; set; }
         public string DisplayName { get; set; }
 
-        public bool CanExecute(object parameter)
-        {
-            return WorkspaceOwner.HasWorkspaces();
-        }
 
-        public void Execute(object parameter)
-        {
-            WorkspaceOwner.RemoveCurrentWorkspace();
-        }
 
-        public event EventHandler CanExecuteChanged;
-        public event Action Executed;
 
-        public void AfterExecute()
-        {
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }
