@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.WebSockets;
-using System.Windows.Automation.Peers;
 using Register.BaseUI.Interfaces;
 using Register.MainWindow;
 
@@ -16,6 +14,7 @@ namespace Register.BaseUI.Implementations
         {
             AddWorkspace(new HomeScreenVM());
         }
+
         public void AddWorkspace(IWorkspace item)
         {
             IWorkspace existingWorkspace = this.FirstOrDefault(ws => ws.GetType() == item.GetType());
@@ -28,15 +27,6 @@ namespace Register.BaseUI.Implementations
             {
                 CurrentWorkspace = existingWorkspace;
             }
-        }
-
-        new void Add(IWorkspace item)
-        {
-            base.Add(item);
-        }
-        public void SetCurrentWorkspace(IWorkspace workspace)
-        {
-            CurrentWorkspace = workspace;
         }
 
         public IWorkspace CurrentWorkspace
@@ -57,6 +47,7 @@ namespace Register.BaseUI.Implementations
             Remove(CurrentWorkspace);
             CurrentWorkspace = previous;
         }
+
         public IWorkspace Previous()
         {
             int currentWorkspaceIndex = IndexOf(CurrentWorkspace);
@@ -78,5 +69,14 @@ namespace Register.BaseUI.Implementations
 
         public event Action OnCurrentItemChanged;
 
+        private new void Add(IWorkspace item)
+        {
+            base.Add(item);
+        }
+
+        public void SetCurrentWorkspace(IWorkspace workspace)
+        {
+            CurrentWorkspace = workspace;
+        }
     }
 }

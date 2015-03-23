@@ -4,14 +4,14 @@ using Register.BaseUI.Interfaces;
 
 namespace Register.BaseUI.Implementations
 {
-    public class ProductsList: List<IProduct>
+    public class ProductsList : List<IProduct>
     {
-        public ProductsList(IEnumerable<IProduct> products) 
+        public ProductsList(IEnumerable<IProduct> products)
         {
-            AddRange(products);      
+            AddRange(products);
         }
 
-        public IEnumerable<IProduct> SelectedProducts 
+        public IEnumerable<IProduct> SelectedProducts
         {
             get { return this.Where(p => p.Selected); }
         }

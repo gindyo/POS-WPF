@@ -1,7 +1,4 @@
-﻿using System;
-using System.ComponentModel;
-using System.Linq;
-using Register.BaseUI.Implementations;
+﻿using Register.BaseUI.Implementations;
 using Register.BaseUI.Interfaces;
 
 namespace Register.Commands
@@ -12,15 +9,11 @@ namespace Register.Commands
         {
             DisplayName = "X";
             WorkspaceOwner = workspaceOwner;
-            DoExecute = () =>  WorkspaceOwner.RemoveCurrentWorkspace();
+            DoExecute = () => WorkspaceOwner.RemoveCurrentWorkspace();
             DoCanExecuteCheck = () => WorkspaceOwner.HasWorkspaces();
         }
 
         public IWorkspaceOwner WorkspaceOwner { get; set; }
         public string DisplayName { get; set; }
-
-
-
-
     }
 }

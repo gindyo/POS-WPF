@@ -5,8 +5,8 @@ namespace Register.BaseUI.Interfaces
 {
     public interface IWorkspaces : IList<IWorkspace>
     {
-        void AddWorkspace(IWorkspace value);
         IWorkspace CurrentWorkspace { get; set; }
+        void AddWorkspace(IWorkspace value);
         void RemoveCurrent();
         IWorkspace Next();
         IWorkspace Previous();

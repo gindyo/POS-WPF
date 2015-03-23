@@ -11,6 +11,7 @@ namespace Register.MainWindow
     public class MainWindowVM : BaseVM, IWorkspaceOwner
     {
         private readonly IWorkspaces _workspaces;
+
         public MainWindowVM()
         {
             _workspaces = new Workspaces();
@@ -22,28 +23,31 @@ namespace Register.MainWindow
             };
             WorkspaceHeader = new WorkspaceHeaderVM(this);
         }
+
         public WorkspaceHeaderVM WorkspaceHeader { get; set; }
+
         public string Title
         {
             get { return (CurrentWorkspace == null ? "" : CurrentWorkspace.DisplayName); }
         }
+
         public List<IUICommand> NavigationLinks { get; set; }
+
         public IWorkspaces Workspaces
         {
-            get
-            {
-                return _workspaces;
-            }
+            get { return _workspaces; }
         }
+
         public IWorkspace CurrentWorkspace
         {
             get { return Workspaces.CurrentWorkspace; }
-           
         }
+
         public bool HasWorkspaces()
         {
-           return Workspaces.Any();
+            return Workspaces.Any();
         }
+
         public void RemoveCurrentWorkspace()
         {
             Workspaces.RemoveCurrent();

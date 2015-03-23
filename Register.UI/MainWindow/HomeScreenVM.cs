@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Register.BaseUI.Interfaces;
+﻿using Register.BaseUI.Interfaces;
 
 namespace Register.MainWindow
 {
@@ -13,6 +8,7 @@ namespace Register.MainWindow
         {
             DisplayName = "Welcome to POS";
         }
+
         public string DisplayName { get; set; }
     }
 }

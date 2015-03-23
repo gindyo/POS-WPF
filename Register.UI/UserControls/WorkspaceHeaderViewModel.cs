@@ -48,7 +48,5 @@ namespace Register.UserControls
             OnPropertyChanged("NavigateForwardCommand");
             OnPropertyChanged("NavigateBackCommand");
         }
-
-
     }
 }

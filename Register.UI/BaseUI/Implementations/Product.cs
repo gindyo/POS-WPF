@@ -2,7 +2,7 @@
 
 namespace Register.BaseUI.Implementations
 {
-    class Product : IProduct
+    internal class Product : IProduct
     {
         public bool Selected { get; set; }
     }
