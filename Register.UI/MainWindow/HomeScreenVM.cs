@@ -1,4 +1,4 @@
-﻿using Register.UI.BaseUI.Interfaces;
+﻿using Interfaces;
 
 namespace Register.UI.MainWindow
 {

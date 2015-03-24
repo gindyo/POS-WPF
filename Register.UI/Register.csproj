@@ -50,13 +50,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BaseUI\BaseVM.cs" />
+    <Compile Include="BaseUI\Implementations\BaseCollectionVM.cs" />
     <Compile Include="BaseUI\Implementations\UICommand.cs" />
     <Compile Include="BaseUI\Implementations\Workspaces.cs" />
-    <Compile Include="BaseUI\Interfaces\IWorkspace.cs" />
-    <Compile Include="BaseUI\Interfaces\IUICommand.cs" />
-    <Compile Include="BaseUI\Interfaces\IWorkspaceOwner.cs" />
-    <Compile Include="BaseUI\Interfaces\IWorkspaces.cs" />
-    <Compile Include="BaseUI\Implementations\Product.cs" />
+    <Compile Include="BaseUI\Implementations\ProductVM.cs" />
     <Compile Include="UserControls\CommandableUserControl.cs" />
     <Compile Include="Commands\NavigationCommands\CommandViews\NavigationCommandView.cs" />
     <Compile Include="Commands\NavigationCommands\HeaderLinkCommand.cs" />
@@ -70,7 +67,6 @@
       <DependentUpon>CloseCommandView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Commands\CloseCommandVM.cs" />
-    <Compile Include="BaseUI\Interfaces\IProduct.cs" />
     <Compile Include="BaseUI\Implementations\ProductsList.cs" />
     <Compile Include="MainWindow\HomeScreenVM.cs" />
     <Compile Include="UserControls\HorizontalItemsControl.cs" />
@@ -101,7 +97,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ProductSearch\ProductSearchView.xaml">
+    <Page Include="ProductFinder\ProductFinderView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -116,10 +112,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainWindow\MainWindowVM.cs" />
-    <Compile Include="ProductSearch\ProductSearchView.xaml.cs">
-      <DependentUpon>ProductSearchView.xaml</DependentUpon>
+    <Compile Include="ProductFinder\ProductFinderView.xaml.cs">
+      <DependentUpon>ProductFinderView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ProductSearch\ProductSearchViewModel.cs" />
+    <Compile Include="ProductFinder\ProductsFinderVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -153,7 +149,15 @@
   <ItemGroup>
     <Resource Include="Images\arrow_Forward_16xLG.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="BaseUI\Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+      <Project>{B9E192D2-5A99-424C-962C-618B670BEA6F}</Project>
+      <Name>Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

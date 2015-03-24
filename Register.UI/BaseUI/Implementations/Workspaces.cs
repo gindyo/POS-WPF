@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Register.UI.BaseUI.Interfaces;
+using Interfaces;
 using Register.UI.MainWindow;
 
 namespace Register.UI.BaseUI.Implementations

@@ -1,6 +1,6 @@
 ﻿using System.Linq;
+using Interfaces;
 using Register.UI.BaseUI.Implementations;
-using Register.UI.BaseUI.Interfaces;
 
 namespace Register.UI.Commands.NavigationCommands
 {

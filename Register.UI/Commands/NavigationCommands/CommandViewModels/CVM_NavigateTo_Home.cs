@@ -1,4 +1,4 @@
-﻿using Register.UI.BaseUI.Interfaces;
+﻿using Interfaces;
 using Register.UI.MainWindow;
 
 namespace Register.UI.Commands.NavigationCommands.CommandViewModels

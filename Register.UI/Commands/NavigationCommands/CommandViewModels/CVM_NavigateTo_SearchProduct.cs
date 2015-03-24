@@ -1,5 +1,5 @@
-﻿using Register.UI.BaseUI.Interfaces;
-using Register.UI.ProductSearch;
+﻿using Interfaces;
+using Register.UI.ProductFinder;
 
 namespace Register.UI.Commands.NavigationCommands.CommandViewModels
 {
@@ -14,7 +14,7 @@ namespace Register.UI.Commands.NavigationCommands.CommandViewModels
 
         private void Navigate()
         {
-            WorkspaceOwner.Workspaces.AddWorkspace(new ProductSearchVM());
+            WorkspaceOwner.Workspaces.AddWorkspace(new ProductsFinderVM());
         }
     }
 }

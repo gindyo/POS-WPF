@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Input;
+using Interfaces;
 using Register.UI.BaseUI;
 using Register.UI.BaseUI.Implementations;
-using Register.UI.BaseUI.Interfaces;
 using Register.UI.Commands;
 using Register.UI.Commands.NavigationCommands.CommandViewModels;
 

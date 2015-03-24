@@ -1,7 +1,6 @@
 ﻿namespace Interfaces
 {
-    public interface ITransactionSession
+    public interface ITransactionSession : IIdentifyable
     {
-        int Id { get; set; }
     }
 }

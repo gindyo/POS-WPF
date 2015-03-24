@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using Register.UI.BaseUI.Interfaces;
+using Interfaces;
 
 namespace Register.UI.Commands.NavigationCommands.CommandViewModels
 {

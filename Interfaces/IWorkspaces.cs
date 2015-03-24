@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Register.UI.BaseUI.Interfaces
+namespace Interfaces
 {
     public interface IWorkspaces : IList<IWorkspace>
     {

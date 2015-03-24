@@ -1,13 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Register.UI.BaseUI.Interfaces;
+using Interfaces;
 
 namespace Register.UI.BaseUI.Implementations
 {
-    public class ProductsList : List<IProduct>
+    public class ProductsList : BaseCollectionVM<IProduct>, IProductsList
     {
-        public ProductsList(IEnumerable<IProduct> products)
+        public ProductsList(IProductsListOwner owner, IEnumerable<IProduct> products)
         {
+            
             AddRange(products);
         }
 

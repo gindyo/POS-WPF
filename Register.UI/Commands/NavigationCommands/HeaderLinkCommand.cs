@@ -1,5 +1,5 @@
-﻿using Register.UI.BaseUI.Implementations;
-using Register.UI.BaseUI.Interfaces;
+﻿using Interfaces;
+using Register.UI.BaseUI.Implementations;
 
 namespace Register.UI.Commands.NavigationCommands
 {

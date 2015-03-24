@@ -1,5 +1,5 @@
 ﻿using System;
-using Register.UI.BaseUI.Interfaces;
+using Interfaces;
 
 namespace Register.UI.BaseUI.Implementations
 {

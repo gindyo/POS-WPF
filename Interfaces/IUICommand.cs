@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace Register.UI.BaseUI.Interfaces
+namespace Interfaces
 {
     public interface IUICommand : ICommand
     {
