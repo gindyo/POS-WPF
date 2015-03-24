@@ -6,6 +6,8 @@ namespace Register.UI.Commands.NavigationCommands.CommandViewModels
     {
         public NavigateBackCommandVM(IWorkspaceOwner workspaceOwner) : base(workspaceOwner)
         {
+            DoCanExecuteCheck = () => true;
+            DoExecute = () => NextWorkspace();
         }
 
         public override IWorkspace NextWorkspace()

@@ -4,11 +4,11 @@
                     xmlns:commands="clr-namespace:Register.UI.Commands"
                     xmlns:commandViews="clr-namespace:Register.UI.Commands.NavigationCommands.CommandViews"
                     xmlns:impl="clr-namespace:Register.UI.BaseUI.Implementations"
-                    xmlns:mainWindow="clr-namespace:Register.UI.MainWindow"
                     xmlns:userControls="clr-namespace:Register.UI.UserControls"
                     xmlns:ncVMs="clr-namespace:Register.UI.Commands.NavigationCommands.CommandViewModels"
                     xmlns:nc="clr-namespace:Register.UI.Commands.NavigationCommands"
-                    xmlns:productSearch="clr-namespace:Register.UI.ProductFinder">
+                    xmlns:productSearch="clr-namespace:Register.UI.ProductFinder"
+                    xmlns:home="clr-namespace:Register.UI.Home">
     <DataTemplate DataType="{x:Type productSearch:ProductsFinderVM}">
         <productSearch:ProductFinderView />
     </DataTemplate>
@@ -20,7 +20,7 @@
         <commandViews:NavigationCommandView />
     </DataTemplate>
 
-    <DataTemplate DataType="{x:Type mainWindow:HomeScreenVM}">
+    <DataTemplate DataType="{x:Type home:HomeVM}">
         <TextBlock Text="{Binding DisplayName}" />
     </DataTemplate>
 

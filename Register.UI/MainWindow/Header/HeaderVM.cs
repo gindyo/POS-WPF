@@ -6,11 +6,11 @@ using Register.UI.BaseUI.Implementations;
 using Register.UI.Commands;
 using Register.UI.Commands.NavigationCommands.CommandViewModels;
 
-namespace Register.UI.UserControls
+namespace Register.UI.MainWindow.Header
 {
-    public class WorkspaceHeaderVM : BaseVM
+    public class HeaderVM : BaseVM
     {
-        public WorkspaceHeaderVM(IWorkspaceOwner workspaceOwner)
+        public HeaderVM(IWorkspaceOwner workspaceOwner)
         {
             WorkspaceOwner = workspaceOwner;
             NavigationLinks = workspaceOwner.NavigationLinks;

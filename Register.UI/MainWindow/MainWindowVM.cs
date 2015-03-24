@@ -4,6 +4,7 @@ using Interfaces;
 using Register.UI.BaseUI;
 using Register.UI.BaseUI.Implementations;
 using Register.UI.Commands.NavigationCommands.CommandViewModels;
+using Register.UI.MainWindow.Header;
 using Register.UI.UserControls;
 
 namespace Register.UI.MainWindow
@@ -21,10 +22,10 @@ namespace Register.UI.MainWindow
                 new NavigateToHomeCommandVM(this),
                 new NavigateToSearchProductVM(this)
             };
-            WorkspaceHeader = new WorkspaceHeaderVM(this);
+            Header = new HeaderVM(this);
         }
 
-        public WorkspaceHeaderVM WorkspaceHeader { get; set; }
+        public HeaderVM Header { get; set; }
 
         public string Title
         {

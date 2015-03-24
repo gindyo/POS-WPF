@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Interfaces;
+using Register.UI.Home;
 using Register.UI.MainWindow;
 
 namespace Register.UI.BaseUI.Implementations
@@ -12,7 +13,7 @@ namespace Register.UI.BaseUI.Implementations
 
         public Workspaces()
         {
-            AddWorkspace(new HomeScreenVM());
+            AddWorkspace(new HomeVM());
         }
 
         public void AddWorkspace(IWorkspace item)
@@ -42,7 +43,7 @@ namespace Register.UI.BaseUI.Implementations
         public void RemoveCurrent()
         {
             IWorkspace previous = Previous();
-            if (CurrentWorkspace is HomeScreenVM)
+            if (CurrentWorkspace is HomeVM)
                 return;
             Remove(CurrentWorkspace);
             CurrentWorkspace = previous;
@@ -53,7 +54,7 @@ namespace Register.UI.BaseUI.Implementations
             int currentWorkspaceIndex = IndexOf(CurrentWorkspace);
             if (currentWorkspaceIndex <= 0)
             {
-                CurrentWorkspace = new HomeScreenVM();
+                CurrentWorkspace = new HomeVM();
                 return CurrentWorkspace;
             }
             return this[currentWorkspaceIndex - 1];

@@ -68,15 +68,15 @@
     </Compile>
     <Compile Include="Commands\CloseCommandVM.cs" />
     <Compile Include="BaseUI\Implementations\ProductsList.cs" />
-    <Compile Include="MainWindow\HomeScreenVM.cs" />
+    <Compile Include="Home\HomeVM.cs" />
     <Compile Include="UserControls\HorizontalItemsControl.cs" />
-    <Compile Include="UserControls\ProductListView.xaml.cs">
-      <DependentUpon>ProductListView.xaml</DependentUpon>
+    <Compile Include="UserControls\ProductListTemplate.xaml.cs">
+      <DependentUpon>ProductListTemplate.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\WorkspaceHeader.xaml.cs">
-      <DependentUpon>WorkspaceHeader.xaml</DependentUpon>
+    <Compile Include="MainWindow\Header\HeaderTemplate.xaml.cs">
+      <DependentUpon>HeaderTemplate.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\WorkspaceHeaderViewModel.cs" />
+    <Compile Include="MainWindow\Header\HeaderVM.cs" />
     <Page Include="Commands\NavigationCommands\CommandViews\CloseCommandView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -97,23 +97,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ProductFinder\ProductFinderView.xaml">
+    <Page Include="ProductFinder\ProductFinderTemplate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\ProductListView.xaml">
+    <Page Include="UserControls\ProductListTemplate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\WorkspaceHeader.xaml">
+    <Page Include="MainWindow\Header\HeaderTemplate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainWindow\MainWindowVM.cs" />
-    <Compile Include="ProductFinder\ProductFinderView.xaml.cs">
-      <DependentUpon>ProductFinderView.xaml</DependentUpon>
+    <Compile Include="ProductFinder\ProductFinderTemplate.xaml.cs">
+      <DependentUpon>ProductFinderTemplate.xaml</DependentUpon>
     </Compile>
     <Compile Include="ProductFinder\ProductsFinderVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
