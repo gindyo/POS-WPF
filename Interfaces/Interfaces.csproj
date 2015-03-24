@@ -34,19 +34,21 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IBaseVM.cs" />
+    <Compile Include="VMBased\IBaseVM.cs" />
     <Compile Include="IJObject.cs" />
-    <Compile Include="IProduct.cs" />
-    <Compile Include="IProductsList.cs" />
-    <Compile Include="IProductsListOwner.cs" />
-    <Compile Include="ISelectable.cs" />
-    <Compile Include="ITransactionSession.cs" />
-    <Compile Include="IUICommand.cs" />
-    <Compile Include="IWorkspace.cs" />
-    <Compile Include="IWorkspaceOwner.cs" />
-    <Compile Include="IWorkspaces.cs" />
+    <Compile Include="VMBased\Identifiable\IIdentifiable.cs" />
+    <Compile Include="VMBased\Identifiable\Selectable\IProduct.cs" />
+    <Compile Include="VMBased\Collections\IProductsList.cs" />
+    <Compile Include="VMBased\IProductsListOwner.cs" />
+    <Compile Include="VMBased\Identifiable\Selectable\ISelectable.cs" />
+    <Compile Include="VMBased\Identifiable\ITransactionSession.cs" />
+    <Compile Include="Commands\IUICommand.cs" />
+    <Compile Include="VMBased\IWorkspace.cs" />
+    <Compile Include="VMBased\IWorkspaceOwner.cs" />
+    <Compile Include="VMBased\Collections\IWorkspaces.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

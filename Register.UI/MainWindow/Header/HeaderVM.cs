@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Input;
-using Interfaces;
+using Interfaces.Commands;
+using Interfaces.VMBased;
 using Register.UI.BaseUI;
 using Register.UI.BaseUI.Implementations;
 using Register.UI.Commands;

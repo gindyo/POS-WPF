@@ -1,4 +1,4 @@
-﻿using Interfaces;
+﻿using Interfaces.VMBased;
 
 namespace Register.UI.Commands.NavigationCommands.CommandViewModels
 {

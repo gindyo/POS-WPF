@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using Interfaces.Commands;
+using Interfaces.VMBased.Collections;
 
-namespace Interfaces
+namespace Interfaces.VMBased
 {
     public interface IWorkspaceOwner
     {

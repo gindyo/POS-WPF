@@ -1,5 +1,5 @@
 ﻿using System;
-using Interfaces;
+using Interfaces.Commands;
 
 namespace Register.UI.BaseUI.Implementations
 {

@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Interfaces;
+using Interfaces.Commands;
+using Interfaces.VMBased;
+using Interfaces.VMBased.Collections;
 using Register.UI.BaseUI;
 using Register.UI.BaseUI.Implementations;
 using Register.UI.Commands.NavigationCommands.CommandViewModels;
 using Register.UI.MainWindow.Header;
-using Register.UI.UserControls;
 
 namespace Register.UI.MainWindow
 {

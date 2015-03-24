@@ -1,4 +1,4 @@
-﻿namespace Interfaces
+﻿namespace Interfaces.VMBased.Identifiable.Selectable
 {
     public interface IProduct : IBaseVM
     {

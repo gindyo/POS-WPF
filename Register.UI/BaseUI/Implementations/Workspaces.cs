@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Interfaces;
+using Interfaces.VMBased;
+using Interfaces.VMBased.Collections;
 using Register.UI.Home;
-using Register.UI.MainWindow;
 
 namespace Register.UI.BaseUI.Implementations
 {

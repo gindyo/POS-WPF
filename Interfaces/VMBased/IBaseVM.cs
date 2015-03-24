@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Interfaces
+namespace Interfaces.VMBased
 {
     public interface IBaseVM : INotifyPropertyChanged
     {

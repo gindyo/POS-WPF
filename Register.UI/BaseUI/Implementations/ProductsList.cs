@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Interfaces;
+using Interfaces.VMBased;
+using Interfaces.VMBased.Collections;
+using Interfaces.VMBased.Identifiable.Selectable;
 
 namespace Register.UI.BaseUI.Implementations
 {
@@ -8,7 +10,6 @@ namespace Register.UI.BaseUI.Implementations
     {
         public ProductsList(IProductsListOwner owner, IEnumerable<IProduct> products)
         {
-            
             AddRange(products);
         }
 

@@ -1,4 +1,4 @@
-﻿using Interfaces;
+﻿using Interfaces.VMBased.Identifiable.Selectable;
 
 namespace Register.UI.BaseUI.Implementations
 {

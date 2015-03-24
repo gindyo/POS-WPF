@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace Register.UI.BaseUI.Implementations
 {
-    public class BaseCollectionVM<T>: List<T>, INotifyPropertyChanged
+    public class BaseCollectionVM<T> : List<T>, INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

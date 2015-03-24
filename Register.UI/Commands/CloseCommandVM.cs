@@ -1,4 +1,4 @@
-﻿using Interfaces;
+﻿using Interfaces.VMBased;
 using Register.UI.BaseUI.Implementations;
 
 namespace Register.UI.Commands

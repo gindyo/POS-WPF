@@ -1,6 +1,5 @@
-﻿using Interfaces;
+﻿using Interfaces.VMBased;
 using Register.UI.Home;
-using Register.UI.MainWindow;
 
 namespace Register.UI.Commands.NavigationCommands.CommandViewModels
 {
@@ -11,6 +10,5 @@ namespace Register.UI.Commands.NavigationCommands.CommandViewModels
             DisplayName = "Home";
             DoExecute = () => WorkspaceOwner.Workspaces.AddWorkspace(new HomeVM());
         }
-        
     }
 }

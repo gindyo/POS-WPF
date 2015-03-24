@@ -1,4 +1,4 @@
-﻿using Interfaces;
+﻿using Interfaces.VMBased;
 using Register.UI.ProductFinder;
 
 namespace Register.UI.Commands.NavigationCommands.CommandViewModels
