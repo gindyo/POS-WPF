@@ -1,6 +1,4 @@
-﻿using Interfaces.VMBased;
-
-namespace Register.UI.Commands.NavigationCommands.CommandViewModels
+﻿namespace Register.UI.Commands.NavigationCommands.CommandViewModels
 {
     public class NavigateForwardCommandVM : HistoryCommandVM
     {
@@ -8,9 +6,9 @@ namespace Register.UI.Commands.NavigationCommands.CommandViewModels
         {
         }
 
-        public override IWorkspace NextWorkspace()
+        protected override void NextWorkspace()
         {
-            return WorkspaceOwner.Workspaces.Next();
+            WorkspaceOwner.GoToNextWorkspace();
         }
     }
 }

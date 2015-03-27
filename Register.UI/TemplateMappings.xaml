@@ -3,12 +3,11 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:commands="clr-namespace:Register.UI.Commands"
                     xmlns:commandViews="clr-namespace:Register.UI.Commands.NavigationCommands.CommandViews"
-                    xmlns:impl="clr-namespace:Register.UI.BaseUI.Implementations"
-                    xmlns:userControls="clr-namespace:Register.UI.UserControls"
                     xmlns:ncVMs="clr-namespace:Register.UI.Commands.NavigationCommands.CommandViewModels"
                     xmlns:nc="clr-namespace:Register.UI.Commands.NavigationCommands"
                     xmlns:productSearch="clr-namespace:Register.UI.ProductFinder"
-                    xmlns:home="clr-namespace:Register.UI.Home">
+                    xmlns:home="clr-namespace:Register.UI.Home"
+                    xmlns:productList="clr-namespace:Register.UI.CollectionModels.ProductList">
     <DataTemplate DataType="{x:Type productSearch:ProductsFinderVM}">
         <productSearch:ProductFinderView />
     </DataTemplate>
@@ -16,7 +15,7 @@
     <DataTemplate DataType="{x:Type commands:CloseCommandVM}">
         <commandViews:CloseCommandView />
     </DataTemplate>
-    <DataTemplate DataType="{x:Type impl:UICommand}">
+    <DataTemplate DataType="{x:Type commands:UICommand}">
         <commandViews:NavigationCommandView />
     </DataTemplate>
 
@@ -24,8 +23,8 @@
         <TextBlock Text="{Binding DisplayName}" />
     </DataTemplate>
 
-    <DataTemplate DataType="{x:Type impl:ProductsList}">
-        <userControls:ProductListView />
+    <DataTemplate DataType="{x:Type productList:ProductListVM}">
+        <productList:ProductListTemplate />
     </DataTemplate>
 
     <DataTemplate DataType="{x:Type ncVMs:NavigateBackCommandVM}">

@@ -1,13 +1,14 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using Interfaces.VMBased;
 
-namespace Register.UI.BaseUI
+namespace Register.UI.Models
 {
-    public class BaseVM : INotifyPropertyChanged
+    public class BaseVM : IBaseVM
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        public virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChangedEventHandler handler = PropertyChanged;
             if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));

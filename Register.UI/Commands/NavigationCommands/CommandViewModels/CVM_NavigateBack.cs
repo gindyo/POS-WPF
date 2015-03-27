@@ -1,18 +1,14 @@
-﻿using Interfaces.VMBased;
-
-namespace Register.UI.Commands.NavigationCommands.CommandViewModels
+﻿namespace Register.UI.Commands.NavigationCommands.CommandViewModels
 {
     public class NavigateBackCommandVM : HistoryCommandVM
     {
         public NavigateBackCommandVM(IWorkspaceOwner workspaceOwner) : base(workspaceOwner)
         {
-            DoCanExecuteCheck = () => true;
-            DoExecute = () => NextWorkspace();
         }
 
-        public override IWorkspace NextWorkspace()
+        protected override void NextWorkspace()
         {
-            return WorkspaceOwner.Workspaces.Previous();
+            WorkspaceOwner.GoToPreviousWorkspace();
         }
     }
 }

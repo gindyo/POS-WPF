@@ -1,12 +1,19 @@
 ﻿using System;
 using Interfaces.Commands;
 
-namespace Register.UI.BaseUI.Implementations
+namespace Register.UI.Commands
 {
     public class UICommand : IUICommand
     {
         protected Func<bool> DoCanExecuteCheck;
-        protected Action DoExecute;
+        protected Action<object> DoExecute;
+
+        protected UICommand(ICommandContext context)
+        {
+            Context = context;
+        }
+
+        protected ICommandContext Context { get; set; }
 
         public bool CanExecute(object parameter)
         {
@@ -18,8 +25,7 @@ namespace Register.UI.BaseUI.Implementations
         public void Execute(object parameter)
         {
             if (DoExecute != null)
-                DoExecute();
-            Executed.Invoke();
+                DoExecute(parameter);
         }
 
         public event EventHandler CanExecuteChanged;

@@ -1,6 +1,6 @@
 ﻿namespace Interfaces.VMBased.Identifiable
 {
-    public interface ITransactionSession : IIdentifiable
+    public interface IProduct : IIdentifiable
     {
     }
 }

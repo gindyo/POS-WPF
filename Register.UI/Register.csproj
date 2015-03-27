@@ -49,11 +49,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="BaseUI\BaseVM.cs" />
-    <Compile Include="BaseUI\Implementations\BaseCollectionVM.cs" />
-    <Compile Include="BaseUI\Implementations\UICommand.cs" />
-    <Compile Include="BaseUI\Implementations\Workspaces.cs" />
-    <Compile Include="BaseUI\Implementations\ProductVM.cs" />
+    <Compile Include="CollectionModels\ProductList\IProductsListOwner.cs" />
+    <Compile Include="Commands\ICommandContext.cs" />
+    <Compile Include="Commands\IWorkspaceOwner.cs" />
+    <Compile Include="Models\BaseVM.cs" />
+    <Compile Include="CollectionModels\BaseCollectionVM.cs" />
+    <Compile Include="Models\Identifiable\Product\ProductVM.cs" />
+    <Compile Include="Commands\UICommand.cs" />
+    <Compile Include="CollectionModels\WorkspaceList\WorkspaceList.cs" />
+    <Compile Include="ProductFinder\FindProductCommand.cs" />
     <Compile Include="UserControls\CommandableUserControl.cs" />
     <Compile Include="Commands\NavigationCommands\CommandViews\NavigationCommandView.cs" />
     <Compile Include="Commands\NavigationCommands\HeaderLinkCommand.cs" />
@@ -67,10 +71,10 @@
       <DependentUpon>CloseCommandView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Commands\CloseCommandVM.cs" />
-    <Compile Include="BaseUI\Implementations\ProductsList.cs" />
+    <Compile Include="CollectionModels\ProductList\ProductListVM.cs" />
     <Compile Include="Home\HomeVM.cs" />
     <Compile Include="UserControls\HorizontalItemsControl.cs" />
-    <Compile Include="UserControls\ProductListTemplate.xaml.cs">
+    <Compile Include="CollectionModels\ProductList\ProductListTemplate.xaml.cs">
       <DependentUpon>ProductListTemplate.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow\Header\HeaderTemplate.xaml.cs">
@@ -101,7 +105,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\ProductListTemplate.xaml">
+    <Page Include="CollectionModels\ProductList\ProductListTemplate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -149,9 +153,7 @@
   <ItemGroup>
     <Resource Include="Images\arrow_Forward_16xLG.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BaseUI\Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">
       <Project>{B9E192D2-5A99-424C-962C-618B670BEA6F}</Project>

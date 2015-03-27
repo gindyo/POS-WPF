@@ -1,20 +1,19 @@
-﻿using Interfaces.VMBased;
-using Register.UI.ProductFinder;
+﻿using Register.UI.ProductFinder;
 
 namespace Register.UI.Commands.NavigationCommands.CommandViewModels
 {
-    internal class NavigateToSearchProductVM : HeaderLinkCommand
+    internal class NavigateToProductFinderCmd : HeaderLinkCommand
     {
-        public NavigateToSearchProductVM(IWorkspaceOwner wsOwner) : base(wsOwner)
+        public NavigateToProductFinderCmd(IWorkspaceOwner wsOwner) : base(wsOwner)
         {
             DisplayName = "Product Search";
             DoCanExecuteCheck = () => true;
-            DoExecute = Navigate;
+            DoExecute = o => Navigate();
         }
 
         private void Navigate()
         {
-            WorkspaceOwner.Workspaces.AddWorkspace(new ProductsFinderVM());
+            WorkspaceOwner.AddWorkspace(new ProductsFinderVM());
         }
     }
 }

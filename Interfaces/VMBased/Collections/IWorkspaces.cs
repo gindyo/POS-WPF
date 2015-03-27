@@ -10,6 +10,8 @@ namespace Interfaces.VMBased.Collections
         void RemoveCurrent();
         IWorkspace Next();
         IWorkspace Previous();
+        void GoToPrevious();
+        void GoToNext();
         event Action OnCurrentItemChanged;
     }
 }

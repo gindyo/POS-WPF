@@ -1,13 +1,10 @@
-﻿using Interfaces.VMBased;
-using Register.UI.BaseUI.Implementations;
-
-namespace Register.UI.Commands.NavigationCommands
+﻿namespace Register.UI.Commands.NavigationCommands
 {
     public class HeaderLinkCommand : UICommand
     {
         protected readonly IWorkspaceOwner WorkspaceOwner;
 
-        public HeaderLinkCommand(IWorkspaceOwner workspaceOwner)
+        public HeaderLinkCommand(IWorkspaceOwner workspaceOwner) : base(workspaceOwner)
         {
             WorkspaceOwner = workspaceOwner;
             DoCanExecuteCheck = () => true;

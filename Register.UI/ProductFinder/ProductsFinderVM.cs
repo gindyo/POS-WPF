@@ -1,21 +1,33 @@
 ﻿using System.Collections.Generic;
 using Interfaces.VMBased;
-using Interfaces.VMBased.Collections;
-using Interfaces.VMBased.Identifiable.Selectable;
-using Register.UI.BaseUI;
-using Register.UI.BaseUI.Implementations;
+using Register.UI.CollectionModels.ProductList;
+using Register.UI.Models;
+using Register.UI.Models.Identifiable.Product;
 
 namespace Register.UI.ProductFinder
 {
-    public class ProductsFinderVM : BaseVM, IWorkspace, IProductsListOwner
+    public class ProductsFinderVM : BaseVM, IWorkspace, IFindProductCommandContext
     {
+        private FindProductsCommand _findProductCommand;
+
         public ProductsFinderVM()
         {
             DisplayName = "ProductVM Search";
-            ProductsList = new ProductsList(this, new List<IProduct> {new ProductVM()});
+            ProductList = new ProductListVM(this, new List<ProductVM> {new ProductVM {Id = 1}});
         }
 
-        public IProductsList ProductsList { get; set; }
+        public FindProductsCommand FindProductsCommand
+        {
+            get
+            {
+                if (_findProductCommand != null)
+                    return _findProductCommand;
+                var command = new FindProductsCommand(this);
+                return command;
+            }
+        }
+
+        public ProductListVM ProductList { get; set; }
         public string DisplayName { get; set; }
     }
 }

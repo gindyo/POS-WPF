@@ -1,18 +1,16 @@
-﻿using System.Linq;
-using Interfaces.VMBased;
-
-namespace Register.UI.Commands.NavigationCommands.CommandViewModels
+﻿namespace Register.UI.Commands.NavigationCommands.CommandViewModels
 {
     public class HistoryCommandVM : HeaderCommand
     {
         protected HistoryCommandVM(IWorkspaceOwner workspaceOwner) : base(workspaceOwner)
         {
-            DoCanExecuteCheck = () => WorkspaceOwner.Workspaces.Any() && NextWorkspace() != null;
+            DoCanExecuteCheck = () => true;
+            DoExecute = o => NextWorkspace();
         }
 
-        public virtual IWorkspace NextWorkspace()
+
+        protected virtual void NextWorkspace()
         {
-            return null;
         }
     }
 }

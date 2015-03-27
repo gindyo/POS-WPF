@@ -1,14 +1,13 @@
-﻿using Interfaces.VMBased;
-using Register.UI.Home;
+﻿using Register.UI.Home;
 
 namespace Register.UI.Commands.NavigationCommands.CommandViewModels
 {
-    public class NavigateToHomeCommandVM : HeaderLinkCommand
+    public class NavigateToHomeCmd : HeaderLinkCommand
     {
-        public NavigateToHomeCommandVM(IWorkspaceOwner workspaceOwner) : base(workspaceOwner)
+        public NavigateToHomeCmd(IWorkspaceOwner workspaceOwner) : base(workspaceOwner)
         {
             DisplayName = "Home";
-            DoExecute = () => WorkspaceOwner.Workspaces.AddWorkspace(new HomeVM());
+            DoExecute = o => WorkspaceOwner.AddWorkspace(new HomeVM());
         }
     }
 }

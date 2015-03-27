@@ -1,52 +1,53 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Input;
 using Interfaces.Commands;
-using Interfaces.VMBased;
-using Register.UI.BaseUI;
-using Register.UI.BaseUI.Implementations;
 using Register.UI.Commands;
 using Register.UI.Commands.NavigationCommands.CommandViewModels;
+using Register.UI.Models;
 
 namespace Register.UI.MainWindow.Header
 {
-    public class HeaderVM : BaseVM
+    public class HeaderVM : BaseVM, ICommandContext
     {
+        private readonly CloseCommandVM _closeWorkspaceCommand;
+        private readonly NavigateBackCommandVM _navigateBackCommand;
+        private readonly NavigateForwardCommandVM _navigateForwardCommand;
+
         public HeaderVM(IWorkspaceOwner workspaceOwner)
         {
             WorkspaceOwner = workspaceOwner;
             NavigationLinks = workspaceOwner.NavigationLinks;
-            NavigationLinks.ForEach(nl => SetCommand(nl as UICommand));
         }
 
-        public List<IUICommand> NavigationLinks { get; set; }
 
+        public List<IUICommand> NavigationLinks { get; set; }
         public IWorkspaceOwner WorkspaceOwner { get; set; }
 
         public ICommand NavigateBackCommand
         {
-            get { return SetCommand(new NavigateBackCommandVM(WorkspaceOwner)); }
+            get { return new NavigateBackCommandVM(WorkspaceOwner); }
         }
 
         public ICommand NavigateForwardCommand
         {
-            get { return SetCommand(new NavigateForwardCommandVM(WorkspaceOwner)); }
+            get { return new NavigateForwardCommandVM(WorkspaceOwner); }
         }
 
         public ICommand CloseWorkspaceCommand
         {
-            get { return SetCommand(new CloseCommandVM(WorkspaceOwner)); }
+            get { return new CloseCommandVM(WorkspaceOwner); }
         }
 
-        private ICommand SetCommand(UICommand command)
+
+        public List<string> PropertiesToUpdate
         {
-            command.Executed += Update;
-            return command;
+            get { return new List<string> {"NavigateBackCommand", "NavigateForwardCommand"}; }
         }
 
         public void Update()
         {
-            OnPropertyChanged("CloseWorkspaceCommand");
             OnPropertyChanged("NavigateForwardCommand");
+            OnPropertyChanged("CloseWorkspaceCommand");
             OnPropertyChanged("NavigateBackCommand");
         }
     }

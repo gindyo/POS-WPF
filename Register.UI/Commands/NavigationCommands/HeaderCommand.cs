@@ -1,17 +1,13 @@
-﻿using System.Linq;
-using Interfaces.VMBased;
-using Register.UI.BaseUI.Implementations;
-
-namespace Register.UI.Commands.NavigationCommands
+﻿namespace Register.UI.Commands.NavigationCommands
 {
     public class HeaderCommand : UICommand
     {
         protected readonly IWorkspaceOwner WorkspaceOwner;
 
-        public HeaderCommand(IWorkspaceOwner workspaceOwner)
+        public HeaderCommand(IWorkspaceOwner workspaceOwner) : base(workspaceOwner)
         {
             WorkspaceOwner = workspaceOwner;
-            DoCanExecuteCheck = () => WorkspaceOwner.Workspaces.Any();
+            DoCanExecuteCheck = () => WorkspaceOwner.HasWorkspaces;
         }
     }
 }

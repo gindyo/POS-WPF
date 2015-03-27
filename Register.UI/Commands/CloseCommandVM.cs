@@ -1,16 +1,13 @@
-﻿using Interfaces.VMBased;
-using Register.UI.BaseUI.Implementations;
-
-namespace Register.UI.Commands
+﻿namespace Register.UI.Commands
 {
     public class CloseCommandVM : UICommand
     {
-        public CloseCommandVM(IWorkspaceOwner workspaceOwner)
+        public CloseCommandVM(IWorkspaceOwner workspaceOwner) : base(workspaceOwner)
         {
             DisplayName = "X";
             WorkspaceOwner = workspaceOwner;
-            DoExecute = () => WorkspaceOwner.RemoveCurrentWorkspace();
-            DoCanExecuteCheck = () => WorkspaceOwner.HasWorkspaces();
+            DoExecute = o => WorkspaceOwner.RemoveCurrentWorkspace();
+            DoCanExecuteCheck = () => WorkspaceOwner.HasWorkspaces;
         }
 
         public IWorkspaceOwner WorkspaceOwner { get; set; }

@@ -5,15 +5,20 @@ using Interfaces.VMBased;
 using Interfaces.VMBased.Collections;
 using Register.UI.Home;
 
-namespace Register.UI.BaseUI.Implementations
+namespace Register.UI.CollectionModels.WorkspaceList
 {
-    public class Workspaces : List<IWorkspace>, IWorkspaces
+    public class WorkspaceList : BaseCollectionVM<IWorkspace>, IWorkspaces
     {
         private IWorkspace _currentWorkspace;
 
-        public Workspaces()
+        public WorkspaceList()
         {
             AddWorkspace(new HomeVM());
+        }
+
+        void ICollection<IWorkspace>.Add(IWorkspace item)
+        {
+            AddWorkspace(item);
         }
 
         public void AddWorkspace(IWorkspace item)
@@ -35,6 +40,7 @@ namespace Register.UI.BaseUI.Implementations
             get { return _currentWorkspace; }
             set
             {
+                if (value == null) return;
                 _currentWorkspace = value;
                 if (OnCurrentItemChanged != null) OnCurrentItemChanged();
             }
@@ -58,6 +64,16 @@ namespace Register.UI.BaseUI.Implementations
                 return CurrentWorkspace;
             }
             return this[currentWorkspaceIndex - 1];
+        }
+
+        public void GoToPrevious()
+        {
+            CurrentWorkspace = Previous();
+        }
+
+        public void GoToNext()
+        {
+            CurrentWorkspace = Next();
         }
 
         public IWorkspace Next()
