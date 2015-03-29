@@ -50,28 +50,35 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="CollectionModels\ProductList\IProductsListOwner.cs" />
-    <Compile Include="Commands\ICommandContext.cs" />
-    <Compile Include="Commands\IWorkspaceOwner.cs" />
+    <Compile Include="Models\ProductsFilter.cs" />
+    <Compile Include="CollectionModels\ProductList\ProductsListVM.cs" />
+    <Compile Include="CollectionModels\ProductList\SelectableProductListVM.cs" />
+    <Compile Include="Commands\FindProductsCommandVM.cs" />
+    <Compile Include="Commands\FindProductsCommandTemplate.xaml.cs">
+      <DependentUpon>FindProductsCommandTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Commands\CommandContexts\ICommandContext.cs" />
+    <Compile Include="Interfaces\Commands\CommandContexts\IHeaderCommandContext.cs" />
     <Compile Include="Models\BaseVM.cs" />
     <Compile Include="CollectionModels\BaseCollectionVM.cs" />
     <Compile Include="Models\Identifiable\Product\ProductVM.cs" />
-    <Compile Include="Commands\UICommand.cs" />
+    <Compile Include="Commands\CommandVM.cs" />
     <Compile Include="CollectionModels\WorkspaceList\WorkspaceList.cs" />
-    <Compile Include="ProductFinder\FindProductCommand.cs" />
+    <Compile Include="Interfaces\Commands\CommandContexts\IFindProductsCommandContext.cs" />
     <Compile Include="UserControls\CommandableUserControl.cs" />
     <Compile Include="Commands\NavigationCommands\CommandViews\NavigationCommandView.cs" />
-    <Compile Include="Commands\NavigationCommands\HeaderLinkCommand.cs" />
+    <Compile Include="Commands\NavigationCommands\HeaderLinkCommandVM.cs" />
     <Compile Include="Commands\NavigationCommands\CommandViewModels\CVM_NavigateBack.cs" />
     <Compile Include="Commands\NavigationCommands\CommandViewModels\CVM_HistoryNavigation.cs" />
     <Compile Include="Commands\NavigationCommands\CommandViewModels\CVM_NavigateForward.cs" />
     <Compile Include="Commands\NavigationCommands\CommandViewModels\CVM_NavigateTo_Home.cs" />
     <Compile Include="Commands\NavigationCommands\CommandViewModels\CVM_NavigateTo_SearchProduct.cs" />
-    <Compile Include="Commands\NavigationCommands\HeaderCommand.cs" />
+    <Compile Include="Commands\NavigationCommands\HeaderCommandVM.cs" />
     <Compile Include="Commands\NavigationCommands\CommandViews\CloseCommandView.xaml.cs">
       <DependentUpon>CloseCommandView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Commands\CloseCommandVM.cs" />
-    <Compile Include="CollectionModels\ProductList\ProductListVM.cs" />
+    <Compile Include="Commands\CloseCommandVMVM.cs" />
+    <Compile Include="Models\Identifiable\Product\SelectableProduct.cs" />
     <Compile Include="Home\HomeVM.cs" />
     <Compile Include="UserControls\HorizontalItemsControl.cs" />
     <Compile Include="CollectionModels\ProductList\ProductListTemplate.xaml.cs">
@@ -82,6 +89,10 @@
     </Compile>
     <Compile Include="MainWindow\Header\HeaderVM.cs" />
     <Page Include="Commands\NavigationCommands\CommandViews\CloseCommandView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\FindProductsCommandTemplate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -155,6 +166,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\Backend\Services.csproj">
+      <Project>{D92EB15B-2DFA-493A-90FE-EE48931472DE}</Project>
+      <Name>Services</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">
       <Project>{B9E192D2-5A99-424C-962C-618B670BEA6F}</Project>
       <Name>Interfaces</Name>

@@ -46,11 +46,20 @@
     <Compile Include="Backend.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="BackendUrl.cs" />
+    <Compile Include="Products\ProductsGetter.cs" />
     <Compile Include="JObjectAddapter.cs" />
+    <Compile Include="Products\ProductsList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+      <Project>{b9e192d2-5a99-424c-962c-618b670bea6f}</Project>
+      <Name>Interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

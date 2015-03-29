@@ -20,6 +20,6 @@
     </Window.Resources>
     <StackPanel>
         <header:HeaderTemplate DataContext="{Binding Header}" />
-        <ContentPresenter Content="{Binding CurrentWorkspace}" />
+        <ContentPresenter Margin="20" Content="{Binding CurrentWorkspace}" />
     </StackPanel>
 </Window>

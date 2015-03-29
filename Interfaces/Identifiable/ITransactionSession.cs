@@ -1,4 +1,4 @@
-﻿namespace Interfaces.VMBased.Identifiable
+﻿namespace Interfaces.Identifiable
 {
     public interface ITransactionSession : IIdentifiable
     {

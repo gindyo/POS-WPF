@@ -1,11 +1,27 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using Interfaces.VMBased;
 
 namespace Register.UI.Models
 {
-    public class BaseVM : IBaseVM
+    public class BaseVM<T> : IBaseVM
     {
+        public BaseVM()
+        {
+        }
+
+        public BaseVM(T baseInstance)
+        {
+            Type type = typeof (T);
+            PropertyInfo[] props = type.GetProperties();
+            foreach (PropertyInfo propertyInfo in props)
+            {
+                propertyInfo.SetValue(this, propertyInfo.GetValue(baseInstance));
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

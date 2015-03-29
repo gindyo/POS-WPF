@@ -3,17 +3,10 @@ using Interfaces.Commands;
 
 namespace Register.UI.Commands
 {
-    public class UICommand : IUICommand
+    public class CommandVM : IUICommand
     {
         protected Func<bool> DoCanExecuteCheck;
         protected Action<object> DoExecute;
-
-        protected UICommand(ICommandContext context)
-        {
-            Context = context;
-        }
-
-        protected ICommandContext Context { get; set; }
 
         public bool CanExecute(object parameter)
         {

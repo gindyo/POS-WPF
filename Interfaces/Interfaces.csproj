@@ -34,15 +34,20 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Collections\IProductsList.cs" />
+    <Compile Include="RequestFilters\IProductsFilter.cs" />
+    <Compile Include="RequestFilters\IRequestFilter.cs" />
+    <Compile Include="ServiceObjects\IGetProducts.cs" />
     <Compile Include="VMBased\IBaseVM.cs" />
     <Compile Include="IJObject.cs" />
-    <Compile Include="VMBased\Identifiable\IIdentifiable.cs" />
-    <Compile Include="VMBased\Identifiable\IProduct.cs" />
-    <Compile Include="VMBased\Identifiable\Selectable\ISelectableProduct.cs" />
-    <Compile Include="VMBased\Collections\IProductsList.cs" />
-    <Compile Include="VMBased\Identifiable\Selectable\ISelectable.cs" />
-    <Compile Include="VMBased\Identifiable\ITransactionSession.cs" />
+    <Compile Include="Identifiable\IIdentifiable.cs" />
+    <Compile Include="Identifiable\IProduct.cs" />
+    <Compile Include="Identifiable\Selectable\ISelectableProduct.cs" />
+    <Compile Include="VMBased\Collections\IProductsListVM.cs" />
+    <Compile Include="Identifiable\Selectable\ISelectable.cs" />
+    <Compile Include="Identifiable\ITransactionSession.cs" />
     <Compile Include="Commands\IUICommand.cs" />
+    <Compile Include="VMBased\Identifiable\IProductVM.cs" />
     <Compile Include="VMBased\IWorkspace.cs" />
     <Compile Include="VMBased\Collections\IWorkspaces.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

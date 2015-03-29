@@ -1,13 +1,14 @@
 ﻿using Register.UI.Home;
+using Register.UI.Interfaces.Commands.CommandContexts;
 
 namespace Register.UI.Commands.NavigationCommands.CommandViewModels
 {
-    public class NavigateToHomeCmd : HeaderLinkCommand
+    public class NavigateToHomeCmd : HeaderLinkCommandVM
     {
-        public NavigateToHomeCmd(IWorkspaceOwner workspaceOwner) : base(workspaceOwner)
+        public NavigateToHomeCmd(IHeaderCommandContext headerCommandContext) : base(headerCommandContext)
         {
             DisplayName = "Home";
-            DoExecute = o => WorkspaceOwner.AddWorkspace(new HomeVM());
+            DoExecute = o => HeaderCommandContext.AddWorkspace(new HomeVM());
         }
     }
 }

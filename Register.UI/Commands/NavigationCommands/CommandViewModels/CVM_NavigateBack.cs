@@ -1,14 +1,16 @@
-﻿namespace Register.UI.Commands.NavigationCommands.CommandViewModels
+﻿using Register.UI.Interfaces.Commands.CommandContexts;
+
+namespace Register.UI.Commands.NavigationCommands.CommandViewModels
 {
     public class NavigateBackCommandVM : HistoryCommandVM
     {
-        public NavigateBackCommandVM(IWorkspaceOwner workspaceOwner) : base(workspaceOwner)
+        public NavigateBackCommandVM(IHeaderCommandContext headerCommandContext) : base(headerCommandContext)
         {
         }
 
         protected override void NextWorkspace()
         {
-            WorkspaceOwner.GoToPreviousWorkspace();
+            HeaderCommandContext.GoToPreviousWorkspace();
         }
     }
 }

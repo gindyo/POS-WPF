@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Register", "Register.UI\Reg
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{B9E192D2-5A99-424C-962C-618B670BEA6F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Backend\Services.csproj", "{D92EB15B-2DFA-493A-90FE-EE48931472DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{B9E192D2-5A99-424C-962C-618B670BEA6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9E192D2-5A99-424C-962C-618B670BEA6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9E192D2-5A99-424C-962C-618B670BEA6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D92EB15B-2DFA-493A-90FE-EE48931472DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D92EB15B-2DFA-493A-90FE-EE48931472DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D92EB15B-2DFA-493A-90FE-EE48931472DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D92EB15B-2DFA-493A-90FE-EE48931472DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

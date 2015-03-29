@@ -4,30 +4,26 @@ using Interfaces.Commands;
 using Interfaces.VMBased;
 using Interfaces.VMBased.Collections;
 using Register.UI.CollectionModels.WorkspaceList;
-using Register.UI.Commands;
 using Register.UI.Commands.NavigationCommands.CommandViewModels;
 using Register.UI.Home;
+using Register.UI.Interfaces.Commands.CommandContexts;
 using Register.UI.MainWindow.Header;
 using Register.UI.Models;
 
 namespace Register.UI.MainWindow
 {
-    public class MainWindowVM : BaseVM, IWorkspaceOwner
+    public class MainWindowVM : BaseVM<IBaseVM>, IHeaderCommandContext
     {
         private readonly IWorkspaces _workspaces;
-        private NavigateToHomeCmd _navigateHomeCmd;
-        private NavigateToProductFinderCmd _navigateToProductFinderCmd;
 
         public MainWindowVM()
         {
             _workspaces = new WorkspaceList();
             _workspaces.OnCurrentItemChanged += () => OnPropertyChanged("CurrentWorkspace");
-            _navigateHomeCmd = new NavigateToHomeCmd(this);
-            _navigateToProductFinderCmd = new NavigateToProductFinderCmd(this);
             NavigationLinks = new List<IUICommand>
             {
-                _navigateHomeCmd,
-                _navigateToProductFinderCmd
+                new NavigateToHomeCmd(this),
+                new NavigateToProductFinderCmd(this)
             };
             Header = new HeaderVM(this);
         }

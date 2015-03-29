@@ -12,10 +12,13 @@
         <productSearch:ProductFinderView />
     </DataTemplate>
 
-    <DataTemplate DataType="{x:Type commands:CloseCommandVM}">
+    <DataTemplate DataType="{x:Type commands:CloseCommandVMVM}">
         <commandViews:CloseCommandView />
     </DataTemplate>
-    <DataTemplate DataType="{x:Type commands:UICommand}">
+    <DataTemplate DataType="{x:Type commands:FindProductsCommandVM}">
+        <commands:FindProductsCommandTemplate />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type commands:CommandVM}">
         <commandViews:NavigationCommandView />
     </DataTemplate>
 
@@ -23,7 +26,7 @@
         <TextBlock Text="{Binding DisplayName}" />
     </DataTemplate>
 
-    <DataTemplate DataType="{x:Type productList:ProductListVM}">
+    <DataTemplate DataType="{x:Type productList:SelectableProductListVM}">
         <productList:ProductListTemplate />
     </DataTemplate>
 
@@ -39,7 +42,7 @@
         </commandViews:NavigationCommandView>
     </DataTemplate>
 
-    <DataTemplate DataType="{x:Type nc:HeaderLinkCommand}">
+    <DataTemplate DataType="{x:Type nc:HeaderLinkCommandVM}">
         <commandViews:NavigationCommandView>
             <Button Margin="2,0,2,0" Padding="10,0,10,0" Command="{Binding}">
                 <TextBlock Text="{Binding DisplayName}" />

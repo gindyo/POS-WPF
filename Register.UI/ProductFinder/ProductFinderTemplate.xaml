@@ -8,6 +8,11 @@
              d:DataContext="{d:DesignInstance productFinder:ProductsFinderVM}"
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <ContentControl Content="{Binding Path=ProductList}" />
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <ContentControl Grid.Row="0" Content="{Binding FindProductsCommandVM}" />
+        <ContentControl Grid.Row="1" Content="{Binding Path=SelectableProductsListVM}" />
     </Grid>
 </UserControl>
