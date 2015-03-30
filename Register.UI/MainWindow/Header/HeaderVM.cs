@@ -33,7 +33,7 @@ namespace Register.UI.MainWindow.Header
 
         public ICommand CloseWorkspaceCommand
         {
-            get { return new CloseCommandVMVM(HeaderCommandContext); }
+            get { return new CloseWorksapaceCommandVM(HeaderCommandContext); }
         }
 
         public void Update()

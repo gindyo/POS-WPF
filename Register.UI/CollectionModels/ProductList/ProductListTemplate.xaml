@@ -4,9 +4,20 @@
           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
           xmlns:productList="clr-namespace:Register.UI.CollectionModels.ProductList"
+          xmlns:product="clr-namespace:Register.UI.Models.Identifiable.Product"
           mc:Ignorable="d"
           d:DesignHeight="300" d:DesignWidth="300"
           d:DataContext="{d:DesignInstance productList:SelectableProductListVM}"
-          ItemsSource="{Binding}">
-
+          ItemsSource="{Binding}"
+          AutoGenerateColumns="False">
+    <DataGrid.Columns>
+        <DataGridTemplateColumn Header="">
+            <DataGridTemplateColumn.CellTemplate>
+                <DataTemplate>
+                    <CheckBox IsChecked="{Binding IsSelected, UpdateSourceTrigger=PropertyChanged}" />
+                </DataTemplate>
+            </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
+        <DataGridTextColumn Header="UPC" Binding="{Binding UPC}" />
+    </DataGrid.Columns>
 </DataGrid>

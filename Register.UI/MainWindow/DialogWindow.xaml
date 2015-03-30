@@ -4,13 +4,13 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:mainWindow="clr-namespace:Register.UI.MainWindow"
-    xmlns:header="clr-namespace:Register.UI.MainWindow.Header"
+    xmlns:commandViews="clr-namespace:Register.UI.Commands.NavigationCommands.CommandViews"
     mc:Ignorable="d"
-    x:Class="Register.UI.MainWindow.MainWindow"
-    Title="POS" Height="570.331" Width="1042.62">
-    <Window.DataContext>
-        <mainWindow:MainWindowVM />
-    </Window.DataContext>
+    x:Class="Register.UI.MainWindow.DialogWindow"
+    Title="POS" Height="570.331" Width="1042.62"
+    d:DataContext="{d:DesignInstance mainWindow:DialogWindow}"
+    BorderBrush="Peru"
+    BorderThickness="1">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -20,7 +20,10 @@
         </ResourceDictionary>
     </Window.Resources>
     <StackPanel>
-        <header:HeaderTemplate DataContext="{Binding Header}" />
-        <ContentPresenter Margin="20" Content="{Binding CurrentWorkspace}" />
+        <StackPanel Name="TitleBar" HorizontalAlignment="Right">
+            <ContentControl Content="{Binding CloseCommand}" />
+        </StackPanel>
+        <ContentControl Name="ContentControl" Margin="20" />
     </StackPanel>
+
 </Window>

@@ -2,13 +2,13 @@
 
 namespace Register.UI.Commands
 {
-    public class CloseCommandVMVM : CommandVM
+    public class CloseWorksapaceCommandVM : CloseCommandVM
     {
-        public CloseCommandVMVM(IHeaderCommandContext headerCommandContext)
+        public CloseWorksapaceCommandVM(IHeaderCommandContext headerCommandContext)
+            : base(headerCommandContext.RemoveCurrentWorkspace)
         {
             DisplayName = "X";
             HeaderCommandContext = headerCommandContext;
-            DoExecute = o => HeaderCommandContext.RemoveCurrentWorkspace();
             DoCanExecuteCheck = () => HeaderCommandContext.HasWorkspaces;
         }
 

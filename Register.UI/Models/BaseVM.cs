@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Windows;
 using Interfaces.VMBased;
 
 namespace Register.UI.Models
@@ -28,6 +29,11 @@ namespace Register.UI.Models
         {
             PropertyChangedEventHandler handler = PropertyChanged;
             if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public void OpenDialog(IBaseVM viewModel)
+        {
+            Application.Current.MainWindow.ShowDialog();
         }
     }
 }

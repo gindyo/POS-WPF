@@ -7,12 +7,8 @@
              mc:Ignorable="d"
              d:DataContext="{d:DesignInstance productFinder:ProductsFinderVM}"
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-        </Grid.RowDefinitions>
-        <ContentControl Grid.Row="0" Content="{Binding FindProductsCommandVM}" />
-        <ContentControl Grid.Row="1" Content="{Binding Path=SelectableProductsListVM}" />
-    </Grid>
+    <StackPanel>
+        <ContentControl Content="{Binding FindProductsCommandVM}" />
+        <ScrollViewer Content="{Binding Path=SelectableProductsListVM}" />
+    </StackPanel>
 </UserControl>

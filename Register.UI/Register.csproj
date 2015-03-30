@@ -50,6 +50,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="CollectionModels\ProductList\IProductsListOwner.cs" />
+    <Compile Include="Commands\CloseWorksapaceCommandVM.cs" />
+    <Compile Include="MainWindow\DialogVM.cs" />
+    <Compile Include="MainWindow\DialogWindow.xaml.cs" />
+    <Compile Include="MainWindow\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\ProductsFilter.cs" />
     <Compile Include="CollectionModels\ProductList\ProductsListVM.cs" />
     <Compile Include="CollectionModels\ProductList\SelectableProductListVM.cs" />
@@ -77,7 +83,7 @@
     <Compile Include="Commands\NavigationCommands\CommandViews\CloseCommandView.xaml.cs">
       <DependentUpon>CloseCommandView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Commands\CloseCommandVMVM.cs" />
+    <Compile Include="Commands\CloseCommandVM.cs" />
     <Compile Include="Models\Identifiable\Product\SelectableProduct.cs" />
     <Compile Include="Home\HomeVM.cs" />
     <Compile Include="UserControls\HorizontalItemsControl.cs" />
@@ -93,6 +99,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Commands\FindProductsCommandTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow\DialogWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
