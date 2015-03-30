@@ -14,7 +14,10 @@ namespace Register.UI.MainWindow.Header
         public HeaderVM(IHeaderCommandContext headerCommandContext)
         {
             HeaderCommandContext = headerCommandContext;
-            NavigationLinks = headerCommandContext.NavigationLinks;
+            NavigationLinks = new List<IUICommand>
+            {
+                new NavigateToHomeCmd(headerCommandContext),
+            };
         }
 
 

@@ -7,8 +7,7 @@
                     xmlns:nc="clr-namespace:Register.UI.Commands.NavigationCommands"
                     xmlns:productSearch="clr-namespace:Register.UI.ProductFinder"
                     xmlns:home="clr-namespace:Register.UI.Home"
-                    xmlns:productList="clr-namespace:Register.UI.CollectionModels.ProductList"
-                    xmlns:header="clr-namespace:Register.UI.MainWindow.Header">
+                    xmlns:productList="clr-namespace:Register.UI.CollectionModels.ProductList">
     <DataTemplate DataType="{x:Type productSearch:ProductsFinderVM}">
         <productSearch:ProductFinderView />
     </DataTemplate>
@@ -16,17 +15,41 @@
     <DataTemplate DataType="{x:Type commands:CloseCommandVM}">
         <commandViews:CloseCommandView />
     </DataTemplate>
+
     <DataTemplate DataType="{x:Type commands:FindProductsCommandVM}">
         <commands:FindProductsCommandTemplate />
     </DataTemplate>
+
     <DataTemplate DataType="{x:Type commands:CommandVM}">
         <commandViews:NavigationCommandView />
     </DataTemplate>
 
-    <DataTemplate DataType="{x:Type home:HomeVM}">
-        <TextBlock Text="{Binding DisplayName}" />
+    <DataTemplate DataType="{x:Type commands:SubmitDialogCmd}">
+        <commandViews:NavigationCommandView>
+            <Button Margin="2,0,2,0" Padding="10,0,10,0" Command="{Binding}" Background="LightGreen">
+                <TextBlock Text="{Binding DisplayName}" />
+            </Button>
+        </commandViews:NavigationCommandView>
     </DataTemplate>
 
+    <DataTemplate DataType="{x:Type commands:OpenDialogCmd}">
+        <commandViews:NavigationCommandView>
+            <Button Margin="2,0,2,0" Padding="10,0,10,0" Command="{Binding}">
+                <TextBlock Text="{Binding DisplayName}" />
+            </Button>
+        </commandViews:NavigationCommandView>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type home:HomeVM}">
+        <StackPanel>
+            <ContentControl Content="{Binding ProductFinder.OpenCmd}" />
+            <ContentControl Content="{Binding ScannedProducts}" />
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type productList:ScannedProducts}">
+        <productList:ProductListTemplate />
+    </DataTemplate>
     <DataTemplate DataType="{x:Type productList:SelectableProductListVM}">
         <productList:ProductListTemplate />
     </DataTemplate>

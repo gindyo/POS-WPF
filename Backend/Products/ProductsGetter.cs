@@ -42,5 +42,7 @@ namespace Services.Products
     {
         public long Id { get; set; }
         public string UPC { get; set; }
+        public string Description { get; set; }
+        public string QoH { get; set; }
     }
 }

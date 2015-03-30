@@ -4,6 +4,6 @@ namespace Register.UI.Interfaces.Commands.CommandContexts
 {
     public interface IFindProductsCommandContext : ICommandContext
     {
-        SelectableProductListVM SelectableProductsListVM { get; set; }
+        SelectableProductListVM FoundProducts { get; set; }
     }
 }

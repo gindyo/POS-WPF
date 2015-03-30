@@ -1,8 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Interfaces.Collections;
-using Register.UI.CollectionModels.ProductList;
-using Register.UI.Interfaces.Commands.CommandContexts;
 using Register.UI.Models;
 using Services.Products;
 
@@ -10,13 +9,13 @@ namespace Register.UI.Commands
 {
     public class FindProductsCommandVM : CommandVM
     {
-        private readonly IFindProductsCommandContext _context;
+        private readonly Action<IProductsList> _onProductsFound;
 
-        public FindProductsCommandVM(IFindProductsCommandContext context)
+        public FindProductsCommandVM(Action<IProductsList> onProductsFound)
         {
-            _context = context;
+            _onProductsFound = onProductsFound ?? delegate { };
             DoExecute = FindProducts;
-            FindByOptions = new List<string> {"UPC"};
+            FindByOptions = new List<string> {Constants.FindByOptions.UPC};
             FindBy = FindByOptions.First();
         }
 
@@ -31,7 +30,7 @@ namespace Register.UI.Commands
                 return;
             var filter = new ProductsFilter {FindBy = FindBy, FindByValue = findByValue};
             IProductsList products = new ProductsGetter().Get(filter);
-            _context.SelectableProductsListVM = new SelectableProductListVM(products);
+            _onProductsFound(products);
         }
     }
 }

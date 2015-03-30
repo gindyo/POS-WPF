@@ -10,5 +10,7 @@ namespace Register.UI.Models.Identifiable.Product
         }
 
         public bool IsSelected { get; set; }
+        public string Description { get; set; }
+        public string QoH { get; set; }
     }
 }

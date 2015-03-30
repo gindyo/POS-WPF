@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\In
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Backend\Services.csproj", "{D92EB15B-2DFA-493A-90FE-EE48931472DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Constants", "Constants\Constants.csproj", "{FE4704B4-677B-4639-9F60-21FA23C70295}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{D92EB15B-2DFA-493A-90FE-EE48931472DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D92EB15B-2DFA-493A-90FE-EE48931472DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D92EB15B-2DFA-493A-90FE-EE48931472DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE4704B4-677B-4639-9F60-21FA23C70295}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE4704B4-677B-4639-9F60-21FA23C70295}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE4704B4-677B-4639-9F60-21FA23C70295}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE4704B4-677B-4639-9F60-21FA23C70295}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

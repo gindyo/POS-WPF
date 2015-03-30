@@ -1,16 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Windows;
 using Interfaces.Commands;
 using Interfaces.VMBased;
 using Interfaces.VMBased.Collections;
 using Register.UI.CollectionModels.WorkspaceList;
-using Register.UI.Commands.NavigationCommands.CommandViewModels;
 using Register.UI.Home;
 using Register.UI.Interfaces.Commands.CommandContexts;
 using Register.UI.MainWindow.Header;
 using Register.UI.Models;
-using Register.UI.ProductFinder;
 
 namespace Register.UI.MainWindow
 {
@@ -21,12 +18,9 @@ namespace Register.UI.MainWindow
         public MainWindowVM()
         {
             _workspaces = new WorkspaceList();
-            _workspaces.OnCurrentItemChanged += () => OnPropertyChanged("CurrentWorkspace");
-            NavigationLinks = new List<IUICommand>
-            {
-                new NavigateToHomeCmd(this),
-                new NavigateToProductFinderCmd(this)
-            };
+
+            _workspaces.OnCurrentItemChanged += () =>
+                OnPropertyChanged("CurrentWorkspace");
             Header = new HeaderVM(this);
         }
 
@@ -74,7 +68,6 @@ namespace Register.UI.MainWindow
 
         public void AddWorkspace(IWorkspace ws)
         {
-            (Application.Current.MainWindow as IDialogPresenter).ShowAsynchModalDialog(new ProductsFinderVM());
             Workspaces.AddWorkspace(ws);
             Header.Update();
         }

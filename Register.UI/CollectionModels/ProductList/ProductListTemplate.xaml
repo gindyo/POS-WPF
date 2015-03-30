@@ -4,12 +4,12 @@
           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
           xmlns:productList="clr-namespace:Register.UI.CollectionModels.ProductList"
-          xmlns:product="clr-namespace:Register.UI.Models.Identifiable.Product"
           mc:Ignorable="d"
           d:DesignHeight="300" d:DesignWidth="300"
           d:DataContext="{d:DesignInstance productList:SelectableProductListVM}"
           ItemsSource="{Binding}"
-          AutoGenerateColumns="False">
+          AutoGenerateColumns="False"
+          IsReadOnly="True">
     <DataGrid.Columns>
         <DataGridTemplateColumn Header="">
             <DataGridTemplateColumn.CellTemplate>
@@ -18,6 +18,8 @@
                 </DataTemplate>
             </DataGridTemplateColumn.CellTemplate>
         </DataGridTemplateColumn>
-        <DataGridTextColumn Header="UPC" Binding="{Binding UPC}" />
+        <DataGridTextColumn Width="70" Header="UPC" Binding="{Binding UPC}" />
+        <DataGridTextColumn Width="*" Header="Description" Binding="{Binding Description}" />
+        <DataGridTextColumn Width="Auto" Header="Qty on Hand" Binding="{Binding QoH}" />
     </DataGrid.Columns>
 </DataGrid>

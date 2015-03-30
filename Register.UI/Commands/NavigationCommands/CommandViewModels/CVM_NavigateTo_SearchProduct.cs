@@ -1,12 +1,14 @@
-﻿using Register.UI.Interfaces.Commands.CommandContexts;
-using Register.UI.ProductFinder;
+﻿using Interfaces.VMBased;
 
 namespace Register.UI.Commands.NavigationCommands.CommandViewModels
 {
-    internal class NavigateToProductFinderCmd : HeaderLinkCommandVM
+    public class NavigateToProductFinderCmd : OpenDialogCmd
     {
-        public NavigateToProductFinderCmd(IHeaderCommandContext wsOwner) : base(wsOwner)
+        private readonly IDialogVM _productFinder;
+
+        public NavigateToProductFinderCmd(IDialogVM productFinder)
         {
+            _productFinder = productFinder;
             DisplayName = "Product Search";
             DoCanExecuteCheck = () => true;
             DoExecute = o => Navigate();
@@ -14,7 +16,7 @@ namespace Register.UI.Commands.NavigationCommands.CommandViewModels
 
         private void Navigate()
         {
-            HeaderCommandContext.AddWorkspace(new ProductsFinderVM());
+            OpenDialog(_productFinder);
         }
     }
 }

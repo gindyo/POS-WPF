@@ -6,10 +6,10 @@ namespace Register.UI.MainWindow
 {
     public partial class DialogWindow
     {
-        public DialogWindow(Window parent, IWorkspace ws)
+        public DialogWindow(Window parent, IDialogVM ws)
         {
             Resources = parent.Resources;
-            CloseCommand = new CloseCommandVM(Close);
+            ws.CloseCmd = CloseCommand = new CloseCommandVM(Close);
             DataContext = this;
             InitializeComponent();
             Owner = parent;

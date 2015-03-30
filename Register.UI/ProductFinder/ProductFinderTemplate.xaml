@@ -9,6 +9,7 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <StackPanel>
         <ContentControl Content="{Binding FindProductsCommandVM}" />
-        <ScrollViewer Content="{Binding Path=SelectableProductsListVM}" />
+        <ScrollViewer Content="{Binding Path=FoundProducts}" />
+        <ContentControl Content="{Binding SubmitCmd}" />
     </StackPanel>
 </UserControl>

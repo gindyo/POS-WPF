@@ -9,13 +9,13 @@ namespace Register.UI.MainWindow
             InitializeComponent();
         }
 
-        public void ShowModalDialog(IWorkspace ws)
+        public void ShowModalDialog(IDialogVM ws)
         {
             var w = new DialogWindow(this, ws);
             w.ShowDialog();
         }
 
-        public void ShowAsynchModalDialog(IWorkspace ws)
+        public void ShowAsynchModalDialog(IDialogVM ws)
         {
             var w = new DialogWindow(this, ws);
             w.Show();
@@ -24,7 +24,7 @@ namespace Register.UI.MainWindow
 
     public interface IDialogPresenter
     {
-        void ShowModalDialog(IWorkspace ws);
-        void ShowAsynchModalDialog(IWorkspace ws);
+        void ShowModalDialog(IDialogVM ws);
+        void ShowAsynchModalDialog(IDialogVM ws);
     }
 }

@@ -49,8 +49,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="CollectionModels\ProductList\IProductsListOwner.cs" />
+    <Compile Include="CollectionModels\ProductList\ScannedProducts.cs" />
     <Compile Include="Commands\CloseWorksapaceCommandVM.cs" />
+    <Compile Include="Commands\OpenDialogCmd.cs" />
+    <Compile Include="Commands\SubmitDialogCmd.cs" />
     <Compile Include="MainWindow\DialogVM.cs" />
     <Compile Include="MainWindow\DialogWindow.xaml.cs" />
     <Compile Include="MainWindow\MainWindow.xaml.cs">
@@ -179,6 +181,10 @@
     <ProjectReference Include="..\Backend\Services.csproj">
       <Project>{D92EB15B-2DFA-493A-90FE-EE48931472DE}</Project>
       <Name>Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Constants\Constants.csproj">
+      <Project>{fe4704b4-677b-4639-9f60-21fa23c70295}</Project>
+      <Name>Constants</Name>
     </ProjectReference>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">
       <Project>{B9E192D2-5A99-424C-962C-618B670BEA6F}</Project>

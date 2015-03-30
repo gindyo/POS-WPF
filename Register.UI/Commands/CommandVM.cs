@@ -3,10 +3,11 @@ using Interfaces.Commands;
 
 namespace Register.UI.Commands
 {
-    public class CommandVM : IUICommand
+    public abstract class CommandVM : IUICommand
     {
         protected Func<bool> DoCanExecuteCheck;
         protected Action<object> DoExecute;
+        public string DisplayName { get; set; }
 
         public bool CanExecute(object parameter)
         {

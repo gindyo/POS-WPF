@@ -11,7 +11,5 @@ namespace Register.UI.Commands.NavigationCommands
             HeaderCommandContext = headerCommandContext;
             DoCanExecuteCheck = () => true;
         }
-
-        public string DisplayName { get; set; }
     }
 }
